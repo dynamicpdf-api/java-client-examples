@@ -4,6 +4,10 @@ package com.dynamicpdf.api.util;
 
 public class PrettyPrintUtility {
 
+	public static String DividerLine() {
+		return "==========================================================================="; 
+	}
+	
 	/**
 	 * A simple implementation to pretty-print JSON file.
 	 *

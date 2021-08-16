@@ -1,5 +1,7 @@
 package com.dynamicpdf.api.examples;
 
+import java.io.IOException;
+
 import com.dynamicpdf.api.PdfInfo;
 import com.dynamicpdf.api.PdfInfoResponse;
 import com.dynamicpdf.api.PdfResource;
