@@ -14,6 +14,8 @@ public class CloudApiExamples {
 		ImageInfoExample.ImageInfoExampleOne(args[0],  args[1]);
 		System.out.println(PrettyPrintUtility.DividerLine());
 		ImageInfoExample.ImageInfoExampleTwo(args[0], args[1]);
+		System.out.println(PrettyPrintUtility.DividerLine());
+		PdfTextExample.PdfTextExampleOne(args[0], args[1]);
 	}
 
 }
