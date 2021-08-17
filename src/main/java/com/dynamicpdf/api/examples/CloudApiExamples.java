@@ -1,6 +1,5 @@
 package com.dynamicpdf.api.examples;
 
-import java.io.IOException;
 
 import com.dynamicpdf.api.util.PrettyPrintUtility;
 
@@ -16,6 +15,10 @@ public class CloudApiExamples {
 		ImageInfoExample.ImageInfoExampleTwo(args[0], args[1]);
 		System.out.println(PrettyPrintUtility.DividerLine());
 		PdfTextExample.PdfTextExampleOne(args[0], args[1]);
+		System.out.println(PrettyPrintUtility.DividerLine());
+		PdfXmpExample.PdfXmpExampleOne(args[0], args[1]);
+		System.out.println(PrettyPrintUtility.DividerLine());
+		DlexLayoutExample.DlexLayoutExampleOne(args[0], args[1]);
 	}
 
 }
