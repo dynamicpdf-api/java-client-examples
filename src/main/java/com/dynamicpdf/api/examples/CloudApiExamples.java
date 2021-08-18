@@ -19,6 +19,7 @@ public class CloudApiExamples {
 		PdfXmpExample.PdfXmpExampleOne(args[0], args[1]);
 		System.out.println(PrettyPrintUtility.DividerLine());
 		DlexLayoutExample.DlexLayoutExampleOne(args[0], args[1]);
+		PdfExample.PdfExampleOne(args[0], args[1]);
 	}
 
 }

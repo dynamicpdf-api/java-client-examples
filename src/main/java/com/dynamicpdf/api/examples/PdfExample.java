@@ -12,6 +12,7 @@ import com.dynamicpdf.api.PdfResponse;
 import com.dynamicpdf.api.RgbColor;
 import com.dynamicpdf.api.elements.ElementPlacement;
 import com.dynamicpdf.api.elements.PageNumberingElement;
+import com.dynamicpdf.api.util.PrettyPrintUtility;
 
 public class PdfExample {
 
@@ -19,6 +20,7 @@ public class PdfExample {
     {
         Pdf pdf = new Pdf();
         pdf.setApiKey(apiKey);
+        pdf.setBaseUrl(CloudApiExamples.BASE_URL);
         pdf.setAuthor("John Doe");
         pdf.setTitle("My Blank PDF Page");
         PageInput pageInput = pdf.addPage(1008, 612);
@@ -29,12 +31,17 @@ public class PdfExample {
         pageNumberingElement.setFontSize(24);
         pageInput.getElements().add(pageNumberingElement);
         PdfResponse pdfResponse = pdf.process();
+        
+        if(pdfResponse.getErrorJson() != null)
+        {
+        	System.out.println(PrettyPrintUtility.prettyPrintJSON(pdfResponse.getErrorJson()));
+        	return;
+        }
+        
         try {
 			FileUtils.writeByteArrayToFile(new File(basePath + "/pageExample.pdf"), pdfResponse.getContent());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-
     }
 }
