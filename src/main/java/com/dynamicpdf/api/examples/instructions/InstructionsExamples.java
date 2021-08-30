@@ -194,14 +194,14 @@ public class InstructionsExamples {
 	public static void main(String[] args) {
 		
 		Pdf exampleOne = InstructionsExamples.topLevelMetaData();
-		InstructionsExamples.printOut(exampleOne, args[0], args[2], "c-sharp-top-level-metadata.pdf");
-		Pdf exampleTwo = InstructionsExamples.SecurityExample(args[2]);
-		InstructionsExamples.printOut(exampleTwo, args[0], args[2], "c-sharp-security.pdf");
-		Pdf exampleThree = InstructionsExamples.MergingExample(args[2]);
-		InstructionsExamples.printOut(exampleThree, args[0], args[2], "c-sharp-merging.pdf");
+		InstructionsExamples.printOut(exampleOne, args[0], args[1], "c-sharp-top-level-metadata.pdf");
+		Pdf exampleTwo = InstructionsExamples.SecurityExample(args[1]);
+		InstructionsExamples.printOut(exampleTwo, args[0], args[1], "c-sharp-security.pdf");
+		Pdf exampleThree = InstructionsExamples.MergingExample(args[1]);
+		InstructionsExamples.printOut(exampleThree, args[0], args[1], "c-sharp-merging.pdf");
 
 		Pdf exampleFour = InstructionsExamples.FormFieldsExample();
-		InstructionsExamples.printOut(exampleFour, args[0], args[2], "c-sharp-fonts.pdf");
+		InstructionsExamples.printOut(exampleFour, args[0], args[1], "c-sharp-fonts.pdf");
 	}
 
 }
