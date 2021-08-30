@@ -176,11 +176,11 @@ public class InstructionsExamples {
 
 				if (response.getErrorJson() != null)
 				{
-					System.out.println(PrettyPrintUtil.prettyPrintJSON(response.getErrorJson()));
+					System.out.println(PrettyPrintUtility.prettyPrintJSON(response.getErrorJson()));
 				}
 				else
 				{
-					System.out.println(PrettyPrintUtil.prettyPrintJSON(pdf.getInstructions()));
+					System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.getInstructions()));
 					System.out.println("==================================================================");
 				       try {
 							FileUtils.writeByteArrayToFile(new File(basePath + "/output/" + outputFile), response.getContent());
