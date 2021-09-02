@@ -14,7 +14,7 @@ public class PdfTextExample {
         PdfText pdfText = new PdfText(resource);
         pdfText.setApiKey(key);
         pdfText.setBaseUrl(CloudApiExamples.BASE_URL);
-        PdfTextResponse response = pdfText.Process();
+        PdfTextResponse response = pdfText.process();
         System.out.println(PrettyPrintUtility.prettyPrintJSON(response.getJsonContent()));
     }
 }

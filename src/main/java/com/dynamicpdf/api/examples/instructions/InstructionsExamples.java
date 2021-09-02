@@ -180,35 +180,22 @@ public class InstructionsExamples {
 				pdf.setAuthor("John Doe");
 				pdf.setTitle("Existing Pdf Example");
 
-				PdfResource resource1 = new PdfResource(basePath + "/DocumentA100.pdf");
+				PdfResource resource = new PdfResource(basePath + "/AllPageElements.pdf");
+				PdfInput input = pdf.addPdf(resource);
+				input.setId("AllPageElements"_;
+				pdf.getInputs().add(input);
+
+				PdfResource resource1 = new PdfResource(basePath + "/outline-existing.pdf");
 				PdfInput input1 = pdf.addPdf(resource1);
-				input1.setId("document2");
+				input1.setId("outlineDoc1");
+				pdf.getInputs().add(input1);
 
-				PdfResource resource2 = new PdfResource(basePath + "/Invoice.pdf");
-				PdfInput input2 = pdf.addPdf(resource2);
-				input2.setId("invoice");
-
-				Outline rootOutline = new Outline("Root Outline");
+				Outline rootOutline = pdf.getOutlines().add("Imported Outline");
 				rootOutline.setExpanded(true);
 
-				Outline outline1 = new Outline("DocumentA 100");
-				outline1.setExpanded(true);
+				rootOutline.getChildren().addPdfOutlines(input);
+				rootOutline.getChildren().addPdfOutlines(input1);
 
-				GoToAction linkTo2 = new GoToAction(input1);
-				linkTo2.setPageOffset(0);
-				linkTo2.setPageZoom(PageZoom.FITPAGE);
-				outline1.setAction(linkTo2);
-
-				Outline outline2 = new Outline("Invoice");
-				outline2.setExpanded(true);
-
-				GoToAction linkTo = new GoToAction(input2);
-				outline2.setAction(linkTo);
-
-				rootOutline.getChildren().add(outline1);
-				rootOutline.getChildren().add(outline2);
-
-				pdf.getOutlines().add(rootOutline);
 				return pdf;
 
 			}
@@ -278,7 +265,7 @@ public class InstructionsExamples {
 				}
 				else
 				{
-					System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.getInstructions()));
+					System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.buildJsonInstructions()));
 					System.out.println("==================================================================");
 				       try {
 							FileUtils.writeByteArrayToFile(new File(basePath + "/output/" + outputFile), response.getContent());
