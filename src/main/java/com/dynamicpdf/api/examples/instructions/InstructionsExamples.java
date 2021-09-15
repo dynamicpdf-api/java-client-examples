@@ -12,6 +12,7 @@ import com.dynamicpdf.api.FormField;
 import com.dynamicpdf.api.GoToAction;
 import com.dynamicpdf.api.ImageResource;
 import com.dynamicpdf.api.LayoutDataResource;
+import com.dynamicpdf.api.MergeOptions;
 import com.dynamicpdf.api.Outline;
 import com.dynamicpdf.api.PageInput;
 import com.dynamicpdf.api.PageZoom;
@@ -20,6 +21,8 @@ import com.dynamicpdf.api.PdfInput;
 import com.dynamicpdf.api.PdfResource;
 import com.dynamicpdf.api.PdfResponse;
 import com.dynamicpdf.api.RgbColor;
+import com.dynamicpdf.api.Template;
+import com.dynamicpdf.api.elements.AztecBarcodeElement;
 import com.dynamicpdf.api.elements.ElementPlacement;
 import com.dynamicpdf.api.elements.PageNumberingElement;
 import com.dynamicpdf.api.elements.TextElement;
@@ -27,22 +30,44 @@ import com.dynamicpdf.api.util.PrettyPrintUtility;
 
 public class InstructionsExamples {
 	
-			public static Pdf MergeOptions(String basePath)
+			public static Pdf DoMergeOptions()
 	        {
-				String cloudResource = "samples/shared/pdf/documentA.pdf";
-				String fileResource = basePath + "/documentB.pdf";
+				String cloudResourceA = "samples/shared/pdf/merge-options.pdf";
+				String cloudResourceB = "samples/shared/pdf/merge-options.pdf";
 
 				// add pdf from cloud resources
 
 				Pdf pdf = new Pdf();
-				pdf.addPdf(cloudResource);
+		
+				MergeOptions mergeOptionsA = new MergeOptions();
+				mergeOptionsA.setDocumentInfo(false);
+				mergeOptionsA.setPageAnnotations(false);
+				
+				pdf.addPdf(cloudResourceA, mergeOptionsA);
+				pdf.addPdf(cloudResourceB);
+								
+				return pdf;
+				
+				
+				
+			}
+			
+			public static Pdf TemplateExample(String basePath)
+	        {
+				Pdf pdf = new Pdf();
+				pdf.setAuthor("John User");
+				pdf.setTitle("Template Example");
+				PdfResource resource = new PdfResource(basePath + "/DocumentA100.pdf");
+				PdfInput input = new PdfInput(resource);
+				pdf.getInputs().add(input);
 
-				// add pdf from local file path
-
-				PdfResource pdfResource = new PdfResource(fileResource);
-				pdf.addPdf(pdfResource);
+				Template template = new Template("Temp1");
+				TextElement element = new TextElement("Hello World", ElementPlacement.TOPCENTER);
+				template.getElements().add(element);
+				input.setTemplate(template);
 				return pdf;
 			}
+			
 
 			public static Pdf MergingExample(String basePath)
 			{
@@ -76,7 +101,7 @@ public class InstructionsExamples {
 				// add dlex to pdf from cloud
 
 				LayoutDataResource layoutData = new LayoutDataResource(basePath + "/getting-started-data.json");
-				pdf.addDlex("samples/getting-started/getting-started.dlex", layoutData);
+				pdf.addDlex("samples/shared/dlex/getting-started.dlex", layoutData);
 
 				// add dlex to pdf from local
 
@@ -121,7 +146,7 @@ public class InstructionsExamples {
 				pageNumberingElement.setFont(Font.getHelvetica());
 				pageNumberingElement.setFontSize(42);
 
-				String cloudResourceName = "samples/shared/Calibri.otf";
+				String cloudResourceName = "samples/shared/font/Calibri.otf";
 
 				PageNumberingElement pageNumberingElementTwo = new PageNumberingElement("B", ElementPlacement.TOPLEFT);
 				pageNumberingElementTwo.setColor(RgbColor.getDarkOrange());
@@ -146,7 +171,7 @@ public class InstructionsExamples {
 			public static Pdf FormFieldsExample()
 			{
 				Pdf pdf = new Pdf();
-				pdf.addPdf("samples/shared/simple-form-fill.pdf");
+				pdf.addPdf("samples/shared/pdf/simple-form-fill.pdf");
 
 
 				FormField formField = new FormField("nameField", "DynamicPdf");
@@ -182,7 +207,7 @@ public class InstructionsExamples {
 
 				PdfResource resource = new PdfResource(basePath + "/AllPageElements.pdf");
 				PdfInput input = pdf.addPdf(resource);
-				input.setId("AllPageElements"_;
+				input.setId("AllPageElements");
 				pdf.getInputs().add(input);
 
 				PdfResource resource1 = new PdfResource(basePath + "/outline-existing.pdf");
@@ -204,54 +229,48 @@ public class InstructionsExamples {
 			
 			  public static Pdf AddOutlinesForNewPdf()
 		        {
-		            String name = "TextElement";
 		            Pdf pdf = new Pdf();
 		            pdf.setAuthor("John Doe");
-		            pdf.setTitle("Sample Pdf");
+		            pdf.setTitle("New Outline Sample Pdf");
 
 		            PageInput pageInput = pdf.addPage();
-		            pageInput.setId("page1");
-		            TextElement element = new TextElement("Hello World 1", ElementPlacement.TOPCENTER);
-		            pageInput.getElements().add(element);
+					TextElement element = new TextElement("Hello World 1", ElementPlacement.TOPCENTER);
+					pageInput.getElements().add(element);
 
-		            PageInput pageInput1 = pdf.addPage();
-		            pageInput1.setId("page2");
-		            TextElement element1 = new TextElement("Hello World 2", ElementPlacement.TOPCENTER);
-		            pageInput1.getElements().add(element1);
+					PageInput pageInput1 = pdf.addPage();
+					TextElement element1 = new TextElement("Hello World 2", ElementPlacement.TOPCENTER);
+					pageInput1.getElements().add(element1);
 
-		            PageInput pageInput2 = pdf.addPage();
-		            pageInput2.setId("page3");
-		            TextElement element2 = new TextElement("Hello World 3", ElementPlacement.TOPCENTER);
-		            pageInput2.getElements().add(element2);
+					PageInput pageInput2 = pdf.addPage();
+					TextElement element2 = new TextElement("Hello World 3", ElementPlacement.TOPCENTER);
+					pageInput2.getElements().add(element2);
 
+					Outline rootOutline = pdf.getOutlines().add("Root Outline");
 
-		            Outline rootOutline = new Outline("Root Outline");
-		            rootOutline.setExpanded(true);
-
-		            Outline outline = new Outline("Page 1");
-		            outline.setExpanded(true);
-		            GoToAction linkTo = new GoToAction(pageInput);
-		            outline.setAction(linkTo);
-
-		            Outline outline2 = new Outline("Page 2");
-		            outline2.setExpanded(true);
-		            GoToAction linkTo1 = new GoToAction(pageInput1);
-		            outline2.setAction(linkTo1);
-
-		            Outline outline3 = new Outline("Page 3");
-		            outline3.setExpanded(true);
-		            GoToAction linkTo3 = new GoToAction(pageInput2);
-		            outline3.setAction(linkTo3);
-
-		            rootOutline.getChildren().add(outline);
-		            rootOutline.getChildren().add(outline2);
-		            rootOutline.getChildren().add(outline3);
-
-		            pdf.getOutlines().add(rootOutline);
-
+					rootOutline.getChildren().add("Page 1", pageInput);
+					rootOutline.getChildren().add("Page 2", pageInput1);
+					rootOutline.getChildren().add("Page 3", pageInput2);
 		            return pdf;
 		        }
 
+				public static Pdf BarcodeExample(String basePath)
+		        {
+
+					Pdf pdf = new Pdf();
+					pdf.setAuthor("John Doe");
+					pdf.setTitle("Barcode Example");
+
+					PdfResource resource = new PdfResource(basePath + "/DocumentA100.pdf");
+					PdfInput input = new PdfInput(resource);
+					pdf.getInputs().add(input);
+
+					Template template = new Template("Temp1");
+
+					AztecBarcodeElement element = new AztecBarcodeElement("Hello World", ElementPlacement.TOPCENTER, 0, 500);
+					template.getElements().add(element);
+					input.setTemplate(template);
+					return pdf;
+				}
 			
 
 			public static void printOut(Pdf pdf, String apiKey, String basePath, String outputFile)
@@ -265,7 +284,7 @@ public class InstructionsExamples {
 				}
 				else
 				{
-					System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.buildJsonInstructions()));
+					System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.getInstructonsJson()));
 					System.out.println("==================================================================");
 				       try {
 							FileUtils.writeByteArrayToFile(new File(basePath + "/output/" + outputFile), response.getContent());
@@ -278,18 +297,28 @@ public class InstructionsExamples {
 			
 	public static void main(String[] args) {
 		
-		Pdf exampleOne = InstructionsExamples.topLevelMetaData();
-		InstructionsExamples.printOut(exampleOne, args[0], args[1], "java-top-level-metadata.pdf");
-		Pdf exampleTwo = InstructionsExamples.SecurityExample(args[1]);
-		InstructionsExamples.printOut(exampleTwo, args[0], args[1], "java-security.pdf");
-		Pdf exampleThree = InstructionsExamples.MergingExample(args[1]);
-		InstructionsExamples.printOut(exampleThree, args[0], args[1], "java-merging.pdf");
+//		Pdf exampleOne = InstructionsExamples.topLevelMetaData();
+//		InstructionsExamples.printOut(exampleOne, args[0], args[1], "java-top-level-metadata.pdf");
+//		Pdf exampleTwo = InstructionsExamples.SecurityExample(args[1]);
+	//	InstructionsExamples.printOut(exampleTwo, args[0], args[1], "java-security.pdf");
+//		Pdf exampleThree = InstructionsExamples.MergingExample(args[1]);
+//		InstructionsExamples.printOut(exampleThree, args[0], args[1], "java-merging.pdf");
 		Pdf exampleFour = InstructionsExamples.FormFieldsExample();
-		InstructionsExamples.printOut(exampleFour, args[0], args[1], "java-fonts.pdf");
-		Pdf exampleFive = InstructionsExamples.AddOutlinesForNewPdf();
-		InstructionsExamples.printOut(exampleFive, args[0], args[1], "java-outline-create.pdf");
-		Pdf exampleSix = InstructionsExamples.AddOutlinesExistingPdf(args[1]);
-		InstructionsExamples.printOut(exampleSix, args[0], args[1], "java-outline-existing.pdf");
+		InstructionsExamples.printOut(exampleFour, args[0], args[1], "java-form.pdf");
+//		Pdf exampleFive = InstructionsExamples.AddOutlinesForNewPdf();
+//		InstructionsExamples.printOut(exampleFive, args[0], args[1], "java-outline-create.pdf");
+//		Pdf exampleSix = InstructionsExamples.AddOutlinesExistingPdf(args[1]);
+//		InstructionsExamples.printOut(exampleSix, args[0], args[1], "java-outline-existing.pdf");
+//		Pdf exampleSeven = InstructionsExamples.TemplateExample(args[1]);
+//		InstructionsExamples.printOut(exampleSeven,  args[0],  args[1], "java-templates.pdf");
+//		Pdf exampleEight = InstructionsExamples.BarcodeExample(args[1]);
+//		InstructionsExamples.printOut(exampleEight, args[0], args[1], "java-barcode.pdf");
+	//	Pdf exampleNine = InstructionsExamples.DoMergeOptions();
+//		InstructionsExamples.printOut(exampleNine, args[0], args[1], "java-merge-options.pdf");
+		
+		
+//		Pdf exampleTen = InstructionsExamples.FontsExample(args[1]);
+//		InstructionsExamples.printOut(exampleTen, args[0], args[1], "java-fonts.pdf");
 	}
 
 }
