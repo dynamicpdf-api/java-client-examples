@@ -1,6 +1,8 @@
 package com.dynamicpdf.api.examples.instructions;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
@@ -272,6 +274,29 @@ public class InstructionsExamples {
 					return pdf;
 				}
 			
+				
+				public static void SecurityExampleOnlyInstructions(String basePath)
+				{
+					String fileResource = basePath + "/documentB.pdf";
+					String userName = "myuser";
+					String passWord = "mypassword";
+					Pdf pdf = new Pdf();
+					PdfResource pdfResource = new PdfResource(fileResource);
+					pdf.addPdf(pdfResource);
+					Aes256Security sec = new Aes256Security(userName, passWord);
+					sec.setAllowCopy(false);
+					sec.setAllowPrint(false);
+					pdf.setSecurity(sec);
+					BufferedWriter writer = null; 
+				    try {
+				    	writer = new BufferedWriter(new FileWriter(basePath + "/output" + "/instructions.json"));
+						writer.write(pdf.getInstructonsJson());
+						writer.close();
+				    } catch(Exception ex) {
+				    	ex.printStackTrace();
+				    }
+				}
+					
 
 			public static void printOut(Pdf pdf, String apiKey, String basePath, String outputFile)
 			{
@@ -303,8 +328,8 @@ public class InstructionsExamples {
 	//	InstructionsExamples.printOut(exampleTwo, args[0], args[1], "java-security.pdf");
 //		Pdf exampleThree = InstructionsExamples.MergingExample(args[1]);
 //		InstructionsExamples.printOut(exampleThree, args[0], args[1], "java-merging.pdf");
-		Pdf exampleFour = InstructionsExamples.FormFieldsExample();
-		InstructionsExamples.printOut(exampleFour, args[0], args[1], "java-form.pdf");
+//		Pdf exampleFour = InstructionsExamples.FormFieldsExample();
+//		InstructionsExamples.printOut(exampleFour, args[0], args[1], "java-form.pdf");
 //		Pdf exampleFive = InstructionsExamples.AddOutlinesForNewPdf();
 //		InstructionsExamples.printOut(exampleFive, args[0], args[1], "java-outline-create.pdf");
 //		Pdf exampleSix = InstructionsExamples.AddOutlinesExistingPdf(args[1]);
@@ -319,6 +344,8 @@ public class InstructionsExamples {
 		
 //		Pdf exampleTen = InstructionsExamples.FontsExample(args[1]);
 //		InstructionsExamples.printOut(exampleTen, args[0], args[1], "java-fonts.pdf");
+		
+		InstructionsExamples.SecurityExampleOnlyInstructions(args[1]);
 	}
 
 }
