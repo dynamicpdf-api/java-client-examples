@@ -290,7 +290,7 @@ public class InstructionsExamples {
 					BufferedWriter writer = null; 
 				    try {
 				    	writer = new BufferedWriter(new FileWriter(basePath + "/output" + "/instructions.json"));
-						writer.write(pdf.getInstructonsJson());
+						writer.write(pdf.getInstructionsJson());
 						writer.close();
 				    } catch(Exception ex) {
 				    	ex.printStackTrace();
@@ -309,7 +309,7 @@ public class InstructionsExamples {
 				}
 				else
 				{
-					System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.getInstructonsJson()));
+					System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.getInstructionsJson()));
 					System.out.println("==================================================================");
 				       try {
 							FileUtils.writeByteArrayToFile(new File(basePath + "/output/" + outputFile), response.getContent());
