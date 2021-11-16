@@ -10,9 +10,19 @@ Both the `CloudApiExamples` and the `InstructionsExamples` are executable classe
 args[0] := <api-key> args[1] := <base-path>
 ```
 
+## Repository
+
+The client library jar and client library source jar are available online. 
+
+- https://repo1.maven.org/maven2/com/dynamicpdf/api/dynamicpdf-api/0.9.0/
+
+Refer to sonatype's Maven repository search for incorporating the library into your application using Maven or one of the many other build tools.
+
+- sonatype Maven Central Repository Search - https://search.maven.org/artifact/com.dynamicpdf.api/dynamicpdf-api/0.9.0/jar
+
 ### Maven
 
-The project contains a Maven pom file for building the project. Be certain to build the java-api project before building this project.
+The examples project contains a Maven pom file for building the project. Be certain to build the java-api project before building this project.
 
 > :memo: *Note that the dynamicpdf-api artifact is probably different than the version in the example pom, be certain to use the correct version when building the examples project.*
 
@@ -47,6 +57,7 @@ The project contains a Maven pom file for building the project. Be certain to bu
 		<dependency>
 			<groupId>com.dynamicpdf.api</groupId>
 			<artifactId>dynamicpdf-api</artifactId>
+			<version>0.9.0</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
