@@ -17,4 +17,8 @@ public class PdfTextExample {
         PdfTextResponse response = pdfText.process();
         System.out.println(PrettyPrintUtility.prettyPrintJSON(response.getJsonContent()));
     }
+    
+    public static void main(String[] args) {
+    	PdfTextExample.PdfTextExampleOne(args[0], args[1]);
+    }
 }

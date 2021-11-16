@@ -325,23 +325,23 @@ public class InstructionsExamples {
 //		Pdf exampleOne = InstructionsExamples.topLevelMetaData();
 //		InstructionsExamples.printOut(exampleOne, args[0], args[1], "java-top-level-metadata.pdf");
 //		Pdf exampleTwo = InstructionsExamples.SecurityExample(args[1]);
-	//	InstructionsExamples.printOut(exampleTwo, args[0], args[1], "java-security.pdf");
+//		InstructionsExamples.printOut(exampleTwo, args[0], args[1], "java-security.pdf");
 //		Pdf exampleThree = InstructionsExamples.MergingExample(args[1]);
 //		InstructionsExamples.printOut(exampleThree, args[0], args[1], "java-merging.pdf");
 //		Pdf exampleFour = InstructionsExamples.FormFieldsExample();
 //		InstructionsExamples.printOut(exampleFour, args[0], args[1], "java-form.pdf");
 //		Pdf exampleFive = InstructionsExamples.AddOutlinesForNewPdf();
 //		InstructionsExamples.printOut(exampleFive, args[0], args[1], "java-outline-create.pdf");
-//		Pdf exampleSix = InstructionsExamples.AddOutlinesExistingPdf(args[1]);
-//		InstructionsExamples.printOut(exampleSix, args[0], args[1], "java-outline-existing.pdf");
+		Pdf exampleSix = InstructionsExamples.AddOutlinesExistingPdf(args[1]);
+		InstructionsExamples.printOut(exampleSix, args[0], args[1], "java-outline-existing.pdf");
 //		Pdf exampleSeven = InstructionsExamples.TemplateExample(args[1]);
 //		InstructionsExamples.printOut(exampleSeven,  args[0],  args[1], "java-templates.pdf");
 //		Pdf exampleEight = InstructionsExamples.BarcodeExample(args[1]);
 //		InstructionsExamples.printOut(exampleEight, args[0], args[1], "java-barcode.pdf");
-	//	Pdf exampleNine = InstructionsExamples.DoMergeOptions();
+//		Pdf exampleNine = InstructionsExamples.DoMergeOptions();
 //		InstructionsExamples.printOut(exampleNine, args[0], args[1], "java-merge-options.pdf");
-		
-		
+//		
+//		
 //		Pdf exampleTen = InstructionsExamples.FontsExample(args[1]);
 //		InstructionsExamples.printOut(exampleTen, args[0], args[1], "java-fonts.pdf");
 		
