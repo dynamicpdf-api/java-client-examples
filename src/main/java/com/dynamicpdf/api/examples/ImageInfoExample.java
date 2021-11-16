@@ -10,23 +10,15 @@ public class ImageInfoExample {
 
 	public static void ImageInfoExampleOne(String key, String basePath) {
         ImageResource imageResource = null;
-        imageResource = new ImageResource(basePath + "/getting-started.png");
+        imageResource = new ImageResource(basePath + "/dynamicpdflogo.png");
         ImageInfo imageInfo = new ImageInfo(imageResource);
         imageInfo.setApiKey(key);
         imageInfo.setBaseUrl(CloudApiExamples.BASE_URL);
         ImageResponse response = imageInfo.process();
         System.out.println(PrettyPrintUtility.prettyPrintJSON(response.getJsonContent()));
-	} 
+	} 	
 	
-    public static void ImageInfoExampleTwo(String apiKey, String basePath)
-    {
-        String key = apiKey;
-        ImageResource imageResource = new ImageResource(basePath + "/multipage.tiff");
-        ImageInfo imageInfo = new ImageInfo(imageResource);
-        imageInfo.setApiKey(apiKey);
-        imageInfo.setBaseUrl(CloudApiExamples.BASE_URL);
-        ImageResponse response = imageInfo.process();
-        System.out.println(PrettyPrintUtility.prettyPrintJSON(response.getJsonContent()));
-    }
-	
+	public static void main(String[] args) {
+		ImageInfoExample.ImageInfoExampleOne(args[0], args[1]);
+	}
 }
