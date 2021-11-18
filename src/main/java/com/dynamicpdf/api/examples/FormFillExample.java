@@ -13,7 +13,6 @@ import com.dynamicpdf.api.PdfResponse;
 public class FormFillExample {
 	
    public static void FormFill(String api, String basePath) {
-
         Pdf pdf = new Pdf();
         PdfResource pdfResource = new PdfResource(basePath + "fw9AcroForm_18.pdf");
         pdf.addPdf(pdfResource);
@@ -35,7 +34,7 @@ public class FormFillExample {
         pdf.getFormFields().add(formField6);
         pdf.getFormFields().add(formField7);
         pdf.getFormFields().add(formField8);
-        pdf.getFormFields().add(formField9);F
+        pdf.getFormFields().add(formField9);
         pdf.setApiKey(api);
         PdfResponse response = pdf.process();
 
