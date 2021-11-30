@@ -11,10 +11,10 @@ import com.dynamicpdf.api.PdfResource;
 import com.dynamicpdf.api.PdfResponse;
 
 public class FormFillExample {
-
-	public static void main(String[] args) {
+	
+   public static void FormFill(String api, String basePath) {
         Pdf pdf = new Pdf();
-        PdfResource pdfResource = new PdfResource("c:/holding/fw9AcroForm_18.pdf");
+        PdfResource pdfResource = new PdfResource(basePath + "fw9AcroForm_18.pdf");
         pdf.addPdf(pdfResource);
 
         FormField formField = new FormField("topmostSubform[0].Page1[0].f1_1[0]", "Any Company, Inc.");
@@ -35,7 +35,7 @@ public class FormFillExample {
         pdf.getFormFields().add(formField7);
         pdf.getFormFields().add(formField8);
         pdf.getFormFields().add(formField9);
-        pdf.setApiKey("DP.JCR8ItHnzFelvaWUiPp4Bo27hYc+Nb2IYP0u2JPyxergTqspK1xjig4V");
+        pdf.setApiKey(api);
         PdfResponse response = pdf.process();
 
         if (!response.getIsSuccessful())
@@ -45,11 +45,15 @@ public class FormFillExample {
         else
         {
             try {
-    			FileUtils.writeByteArrayToFile(new File("c:/holding/taxcompleted.pdf"), response.getContent());
+    			FileUtils.writeByteArrayToFile(new File(basePath + "taxcompleted.pdf"), response.getContent());
     		} catch (IOException e) {
     			e.printStackTrace();
     		}
 
         }
     }
+   
+   public static void main(String[] args) {
+	   FormFillExample.FormFill(args[0], args[1]);
+   }
 }
