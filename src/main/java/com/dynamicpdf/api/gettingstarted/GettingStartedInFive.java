@@ -10,7 +10,7 @@ import com.dynamicpdf.api.PdfResponse;
 public class GettingStartedInFive {
 
 	public static void main(String[] args) {
-		GettingStartedInFive.Run("DP.V9z4rPOYV+b/je9WDNUtED6md3H1i4huSxNoMIXKicf/TYJRxT5H176B",
+		GettingStartedInFive.Run("DynamicPdfApiKey",
 				"C:/temp/dynamicpdf-api-samples/");
 	}
 

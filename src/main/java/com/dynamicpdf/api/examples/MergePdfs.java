@@ -12,7 +12,7 @@ import com.dynamicpdf.api.PdfResponse;
 public class MergePdfs {
 
 	public static void main(String[] args) {
-		MergePdfs.Run("DP.rGTirmTqaXPuS7Vm+pUTZiiBuooF2kj6aMaAOqN5Sli6RaP1KyjmTHFO",
+		MergePdfs.Run("DynamicPdfApiKey",
 				"C:/temp/dynamicpdf-api-samples/");
 
 	}
