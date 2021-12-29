@@ -1,23 +1,16 @@
 package com.dynamicpdf.api.examples.instructions;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 
 import com.dynamicpdf.api.Aes256Security;
-import com.dynamicpdf.api.DlexResource;
 import com.dynamicpdf.api.Font;
 import com.dynamicpdf.api.FormField;
-import com.dynamicpdf.api.GoToAction;
 import com.dynamicpdf.api.ImageResource;
-import com.dynamicpdf.api.LayoutDataResource;
-import com.dynamicpdf.api.MergeOptions;
 import com.dynamicpdf.api.Outline;
 import com.dynamicpdf.api.PageInput;
-import com.dynamicpdf.api.PageZoom;
 import com.dynamicpdf.api.Pdf;
 import com.dynamicpdf.api.PdfInput;
 import com.dynamicpdf.api.PdfResource;
@@ -73,14 +66,13 @@ public class InstructionsExamples {
 
 		Pdf exampleSeven = InstructionsExamples.AddOutlinesExistingPdf(basePath);
 		InstructionsExamples.printOut(exampleSix, apiKey, basePath, "java-outline-existing-output.pdf");
-		
-		
+
 		Pdf exampleEight = InstructionsExamples.TemplateExample(basePath);
-		InstructionsExamples.printOut(exampleEight,  apiKey,  basePath, "java-templates-output.pdf");
-		
+		InstructionsExamples.printOut(exampleEight, apiKey, basePath, "java-templates-output.pdf");
+
 		Pdf exampleNine = InstructionsExamples.BarcodeExample(basePath);
 		InstructionsExamples.printOut(exampleNine, apiKey, basePath, "java-barcode-output.pdf");
-		
+
 	}
 
 	public static Pdf TopLevelMetaData() {
@@ -145,7 +137,7 @@ public class InstructionsExamples {
 		pdf.setSecurity(sec);
 		return pdf;
 	}
-	
+
 	public static Pdf MergeExample(String basePath) {
 		Pdf pdf = new Pdf();
 		PdfResource resourceA = new PdfResource(basePath + "DocumentA.pdf");
@@ -156,7 +148,7 @@ public class InstructionsExamples {
 		pdf.addPdf(resourceB);
 		return pdf;
 	}
-	
+
 	public static Pdf FormFieldsExample(String basePath) {
 		Pdf pdf = new Pdf();
 		pdf.addPdf(new PdfResource(basePath + "simple-form-fill.pdf"));
@@ -191,10 +183,10 @@ public class InstructionsExamples {
 		rootOutline.getChildren().add("Page 3", pageInput2);
 		return pdf;
 	}
-	
+
 	public static Pdf AddOutlinesExistingPdf(String basePath) {
 
-	    Pdf pdf = new Pdf();
+		Pdf pdf = new Pdf();
 		PdfResource resource = new PdfResource(basePath + "AllPageElements.pdf");
 		PdfInput input = pdf.addPdf(resource);
 		input.setId("AllPageElements");
@@ -207,11 +199,11 @@ public class InstructionsExamples {
 
 		Outline rootOutline = pdf.getOutlines().add("Imported Outline");
 		rootOutline.setExpanded(true);
-	    rootOutline.getChildren().addPdfOutlines(input);
+		rootOutline.getChildren().addPdfOutlines(input);
 		rootOutline.getChildren().addPdfOutlines(input1);
 		return pdf;
 	}
-	
+
 	public static Pdf TemplateExample(String basePath) {
 		Pdf pdf = new Pdf();
 		pdf.setAuthor("John User");
@@ -226,7 +218,6 @@ public class InstructionsExamples {
 		input.setTemplate(template);
 		return pdf;
 	}
-
 
 	public static Pdf BarcodeExample(String basePath) {
 
