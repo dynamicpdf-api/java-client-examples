@@ -1,10 +1,8 @@
 package com.dynamicpdf.api.examples;
+
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-
 import org.apache.commons.io.FileUtils;
-
 import com.dynamicpdf.api.Font;
 import com.dynamicpdf.api.PageInput;
 import com.dynamicpdf.api.Pdf;
@@ -15,7 +13,7 @@ import com.dynamicpdf.api.elements.PageNumberingElement;
 
 public class PdfExample {
 
-    public static void PdfExampleOne(String apiKey, String basePath)
+    public static void Run(String apiKey, String basePath)
     {
         Pdf pdf = new Pdf();
         pdf.setApiKey(apiKey);
@@ -30,11 +28,15 @@ public class PdfExample {
         pageInput.getElements().add(pageNumberingElement);
         PdfResponse pdfResponse = pdf.process();
         try {
-			FileUtils.writeByteArrayToFile(new File(basePath + "/pageExample.pdf"), pdfResponse.getContent());
+			FileUtils.writeByteArrayToFile(new File(basePath + "java-pdf-page-example-output.pdf"), pdfResponse.getContent());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-
     }
+    
+	public static void main(String[] args) {
+		PdfExample.Run("DP.TrJj2UBRFfrxiLYYD9xQryHXnFoSRKVPTBYH0LRpVWWnTZPOmgRO6yX6",
+				"C:/temp/dynamicpdf-api-usersguide-examples/");
+	}
+
 }
