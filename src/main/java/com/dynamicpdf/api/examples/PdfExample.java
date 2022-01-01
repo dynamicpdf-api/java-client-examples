@@ -35,7 +35,7 @@ public class PdfExample {
     }
     
 	public static void main(String[] args) {
-		PdfExample.Run("DP.TrJj2UBRFfrxiLYYD9xQryHXnFoSRKVPTBYH0LRpVWWnTZPOmgRO6yX6",
+		PdfExample.Run("DP.xxx--apikey--xxx",
 				"C:/temp/dynamicpdf-api-usersguide-examples/");
 	}
 

@@ -11,7 +11,7 @@ import com.dynamicpdf.api.PdfResponse;
 public class CreatingPdfDlexLayout {
 
 	public static void main(String[] args) {
-		CreatingPdfDlexLayout.Run("DP.7vATWolKJ4xdaefbf/pTgSW7uGWofsZAKctZ1J/hzV9yTrzDvmDI1lwT",
+		CreatingPdfDlexLayout.Run("DP.xxxx--api--key--xxx",
 				"C:/temp/dynamicpdf-api-samples/creating-pdf-dlex-layout-endpoint/");
 	}
 

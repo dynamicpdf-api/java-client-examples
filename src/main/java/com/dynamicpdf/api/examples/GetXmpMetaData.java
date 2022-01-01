@@ -7,7 +7,7 @@ import com.dynamicpdf.api.XmlResponse;
 public class GetXmpMetaData {
 
 	public static void main(String[] args) {
-		GetXmpMetaData.Run("DP.7vATWolKJ4xdaefbf/pTgSW7uGWofsZAKctZ1J/hzV9yTrzDvmDI1lwT",
+		GetXmpMetaData.Run("DP.xxxx--api--key--xxx",
 				"C:/temp/dynamicpdf-api-samples/get-xmp-metadata/");
 	}
 

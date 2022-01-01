@@ -19,7 +19,7 @@ public class PdfTextExample {
     }
     
 	public static void main(String[] args) {
-		PdfTextExample.Run("DP.TrJj2UBRFfrxiLYYD9xQryHXnFoSRKVPTBYH0LRpVWWnTZPOmgRO6yX6",
+		PdfTextExample.Run("DP.xxx--apikey--xxx",
 				"C:/temp/dynamicpdf-api-usersguide-examples/");
 	}
 }

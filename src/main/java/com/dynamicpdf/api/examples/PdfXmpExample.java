@@ -17,7 +17,7 @@ public class PdfXmpExample {
     }
     
 	public static void main(String[] args) {
-		PdfXmpExample.Run("DP.TrJj2UBRFfrxiLYYD9xQryHXnFoSRKVPTBYH0LRpVWWnTZPOmgRO6yX6",
+		PdfXmpExample.Run("DP.xxx--apikey--xxx",
 				"C:/temp/dynamicpdf-api-usersguide-examples/");
 	}
 

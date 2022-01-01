@@ -28,9 +28,9 @@ public class ImageInfoExample {
     }
 	
 	public static void main(String[] args) {
-		ImageInfoExample.RunOne("DP.TrJj2UBRFfrxiLYYD9xQryHXnFoSRKVPTBYH0LRpVWWnTZPOmgRO6yX6",
+		ImageInfoExample.RunOne("DP.xxxx--api--key--xxx",
 				"C:/temp/dynamicpdf-api-usersguide-examples/");
-		ImageInfoExample.RunTwo("DP.TrJj2UBRFfrxiLYYD9xQryHXnFoSRKVPTBYH0LRpVWWnTZPOmgRO6yX6",
+		ImageInfoExample.RunTwo("DP.xxxx--api--key--xxx",
 				"C:/temp/dynamicpdf-api-usersguide-examples/");
 	}
 }

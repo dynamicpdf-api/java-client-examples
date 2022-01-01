@@ -7,7 +7,7 @@ import com.dynamicpdf.api.PdfTextResponse;
 public class ExtractingText {
 
 	public static void main(String[] args) {
-		ExtractingText.Run("DP.NKSoPxiwOgZoypSVYaXyEARo2cO9Kk5BRgY2ZRC0jF/KQq4pDzhfK8yO",
+		ExtractingText.Run("DP.xxxx--api--key--xxx",
 				"C:/temp/dynamicpdf-api-samples/extract-text/");
 
 	}

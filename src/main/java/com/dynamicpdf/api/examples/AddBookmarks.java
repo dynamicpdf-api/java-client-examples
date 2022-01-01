@@ -17,7 +17,7 @@ import com.dynamicpdf.api.UrlAction;
 public class AddBookmarks {
 
 	public static void main(String[] args) {
-		AddBookmarks.Run("DP.vg32AKtgL65WG0JKw7OrqggLV4oru6JD1I2j0fsboxfZQrVOHoJRUlH5",
+		AddBookmarks.Run("DP.xxx--apikey--xxx",
 				"C:/temp/dynamicpdf-api-samples/add-bookmarks/");
 	}
 

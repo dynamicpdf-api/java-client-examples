@@ -13,7 +13,7 @@ import com.dynamicpdf.api.PdfResponse;
 public class CreatePdfDlex {
 
 	public static void main(String[] args) {
-		CreatePdfDlex.Run("DP.F9KH87xzX6JFVE4YGbkLU4nvx7fbnjXOKIr7wPWYPRdaRJe7OlYQ+/cw",
+		CreatePdfDlex.Run("DP.xxxx--api--key--xxx",
 				"C:/temp/dynamicpdf-api-samples/create-pdf-dlex");
 	}
 

@@ -7,7 +7,7 @@ import com.dynamicpdf.api.PdfResource;
 public class GetPdfInfo {
 	
 	public static void main(String[] args) {
-		GetPdfInfo.Run("DP.NKSoPxiwOgZoypSVYaXyEARo2cO9Kk5BRgY2ZRC0jF/KQq4pDzhfK8yO",
+		GetPdfInfo.Run("DP.xxxx--api--key--xxx",
 				"C:/temp/dynamicpdf-api-samples/get-pdf-info/");
 
 	}

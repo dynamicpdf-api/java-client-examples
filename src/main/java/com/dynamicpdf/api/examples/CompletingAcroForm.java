@@ -12,7 +12,7 @@ import com.dynamicpdf.api.PdfResponse;
 public class CompletingAcroForm {
 
 	public static void main(String[] args) {
-		CompletingAcroForm.Run("DP.JtmSyCt8jfAi5IfSa5+Egl7HDj7TBdUsNPy2pu9JqiWWS4AJ+g5/HkMF",
+		CompletingAcroForm.Run("DP.xxxx--api--key--xxx",
 				"C:/temp/dynamicpdf-api-samples/fill-acro-form/");
 
 	}
