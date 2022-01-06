@@ -28,7 +28,6 @@
 		<dependency>
 			<groupId>com.dynamicpdf.api</groupId>
 			<artifactId>dynamicpdf-api</artifactId>
-
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
