@@ -1,4 +1,4 @@
-package com.dynamicpdf.api.gettingstarted;
+package com.dynamicpdf.api.gettingStarted;
 
 import java.io.File;
 import java.io.IOException;
