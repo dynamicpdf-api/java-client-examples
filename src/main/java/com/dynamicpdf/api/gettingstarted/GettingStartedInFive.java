@@ -8,9 +8,11 @@ import com.dynamicpdf.api.LayoutDataResource;
 import com.dynamicpdf.api.PdfResponse;
 
 public class GettingStartedInFive {
+	
+	// https://cloud.dynamicpdf.com/docs/getting-started
 
 	public static void main(String[] args) {
-		GettingStartedInFive.Run("DP.xxx--apikey--xxx",
+		GettingStartedInFive.Run("DP.xxx--api-key--xxx",
 				"C:/temp/dynamicpdf-api-samples/");
 	}
 

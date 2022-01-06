@@ -5,6 +5,8 @@ import com.dynamicpdf.api.PdfText;
 import com.dynamicpdf.api.PdfTextResponse;
 
 public class ExtractingText {
+	
+	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-text/tutorial-pdf-text
 
 	public static void main(String[] args) {
 		ExtractingText.Run("DP.xxxx--api--key--xxx",

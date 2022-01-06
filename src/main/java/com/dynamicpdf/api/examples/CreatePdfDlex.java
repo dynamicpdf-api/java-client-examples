@@ -11,6 +11,8 @@ import com.dynamicpdf.api.PdfResource;
 import com.dynamicpdf.api.PdfResponse;
 
 public class CreatePdfDlex {
+	
+	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-tutorial-dlex-pdf-endpoint
 
 	public static void main(String[] args) {
 		CreatePdfDlex.Run("DP.xxxx--api--key--xxx",

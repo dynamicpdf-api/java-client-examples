@@ -6,6 +6,8 @@ import com.dynamicpdf.api.ImageResponse;
 
 public class GetImageInfo {
 	
+	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/image-info/tutorial-image-info
+	
 	public static void main(String[] args) {
 		GetImageInfo.Run("DP.xxxx--api--key--xxx",
 				"C:/temp/dynamicpdf-api-samples/get-image-info/");

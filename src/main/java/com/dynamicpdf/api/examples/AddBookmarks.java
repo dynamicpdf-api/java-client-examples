@@ -16,6 +16,8 @@ import com.dynamicpdf.api.UrlAction;
 
 public class AddBookmarks {
 
+	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-tutorial-bookmarks
+	
 	public static void main(String[] args) {
 		AddBookmarks.Run("DP.xxx--apikey--xxx",
 				"C:/temp/dynamicpdf-api-samples/add-bookmarks/");

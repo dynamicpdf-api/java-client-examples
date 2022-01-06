@@ -44,7 +44,7 @@ public class InstructionsExamples {
 
 	public static void main(String[] args) {
 
-		String apiKey = "DP.TrJj2UBRFfrxiLYYD9xQryHXnFoSRKVPTBYH0LRpVWWnTZPOmgRO6yX6";
+		String apiKey = "DP.xxx--api-key--xxx";
 		String basePath = "c:/temp/dynamicpdf-api-usersguide-examples/";
 
 		Pdf exampleOne = InstructionsExamples.TopLevelMetaData();

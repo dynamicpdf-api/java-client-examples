@@ -10,6 +10,8 @@ import com.dynamicpdf.api.PdfResponse;
 
 public class CreatingPdfDlexLayout {
 
+	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/dlex-layout/tutorial-dlex-layout
+	
 	public static void main(String[] args) {
 		CreatingPdfDlexLayout.Run("DP.xxxx--api--key--xxx",
 				"C:/temp/dynamicpdf-api-samples/creating-pdf-dlex-layout-endpoint/");
