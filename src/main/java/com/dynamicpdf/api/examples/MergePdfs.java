@@ -10,11 +10,12 @@ import com.dynamicpdf.api.PdfResponse;
 
 
 public class MergePdfs {
+	
+	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-tutorial-merging-pdfs
 
 	public static void main(String[] args) {
-		MergePdfs.Run("DynamicPdfApiKey",
+		MergePdfs.Run("DP.xxx--apikey--xxx",
 				"C:/temp/dynamicpdf-api-samples/");
-
 	}
 
 	public static void Run(String apiKey, String basePath) {
