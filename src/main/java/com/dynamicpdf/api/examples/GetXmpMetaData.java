@@ -9,7 +9,7 @@ public class GetXmpMetaData {
 	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-xmp/tutorial-pdf-xmp
 
 	public static void main(String[] args) {
-		GetXmpMetaData.Run("DP.xxxx--api--key--xxx",
+		GetXmpMetaData.Run("DP.---API-KEY---",
 				"C:/temp/dynamicpdf-api-samples/get-xmp-metadata/");
 	}
 
