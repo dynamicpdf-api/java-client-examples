@@ -15,7 +15,7 @@ public class CreatePdfDlex {
 	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-tutorial-dlex-pdf-endpoint
 
 	public static void main(String[] args) {
-		CreatePdfDlex.Run("DP.xxxx--api--key--xxx",
+		CreatePdfDlex.Run("DP.S24WDZzwg9qgRqzVhZIO1Ff68jHbjoJKezkxnMv+U5C2RK0sHXhWG8KS",
 				"C:/temp/dynamicpdf-api-samples/create-pdf-dlex");
 	}
 
@@ -26,16 +26,12 @@ public class CreatePdfDlex {
         LayoutDataResource layoutDataResource = new LayoutDataResource(basePath + "/SimpleReportWithCoverPage.json");
         pdf.addDlex("samples/creating-pdf-pdf-endpoint/SimpleReportWithCoverPage.dlex", layoutDataResource);
 
-        PdfResource pdfResource = new PdfResource(basePath + "/DocumentA.pdf");
-        pdf.addPdf(pdfResource);
-
-
         PdfResponse response = pdf.process();
 
 		if(response.getIsSuccessful())
 		{
 			try {
-				FileUtils.writeByteArrayToFile(new File(basePath + "/create-pdf-dlex-output.pdf"),
+				FileUtils.writeByteArrayToFile(new File(basePath + "/create-pdf-dlex-java-output.pdf"),
 						response.getContent());
 			} catch (IOException e) {
 				e.printStackTrace();
