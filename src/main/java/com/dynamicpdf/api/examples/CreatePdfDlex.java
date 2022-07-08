@@ -14,7 +14,7 @@ public class CreatePdfDlex {
 	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-tutorial-dlex-pdf-endpoint
 
 	public static void main(String[] args) {
-		CreatePdfDlex.Run("DP.S24WDZzwg9qgRqzVhZIO1Ff68jHbjoJKezkxnMv+U5C2RK0sHXhWG8KS",
+		CreatePdfDlex.Run("DP.API-KEY",
 				"C:/temp/dynamicpdf-api-samples/create-pdf-dlex");
 	}
 

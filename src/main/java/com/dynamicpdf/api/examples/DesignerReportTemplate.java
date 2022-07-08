@@ -11,7 +11,7 @@ import com.dynamicpdf.api.PdfResponse;
 public class DesignerReportTemplate {
 
 	public static void main(String[] args) {
-		DesignerReportTemplate.Run("DP.S24WDZzwg9qgRqzVhZIO1Ff68jHbjoJKezkxnMv+U5C2RK0sHXhWG8KS",
+		DesignerReportTemplate.Run("DP.api-key",
 					"C:/temp/dynamicpdf-api-samples/using-dlex-layout/");
 		}
 	
