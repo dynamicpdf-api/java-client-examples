@@ -7,7 +7,6 @@ import org.apache.commons.io.FileUtils;
 
 import com.dynamicpdf.api.LayoutDataResource;
 import com.dynamicpdf.api.Pdf;
-import com.dynamicpdf.api.PdfResource;
 import com.dynamicpdf.api.PdfResponse;
 
 public class CreatePdfDlex {
