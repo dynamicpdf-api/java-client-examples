@@ -6,15 +6,24 @@
 
 # java-client-examples
 
-This project contains numerous sample projects for the tutorials and examples on [cloud.dynamicpdf.com](cloud.dynamicpdf.com). Each example project is designed to run independently. All resources can be found on the cloud.dynamicpdf.com website.
+The Java Client Examples project uses the DynamicPDF Cloud API Java client library to create, merge, split, form fill, stamp, obtain metadata, convert, and secure/encrypt PDF documents.  This project contains numerous sample projects for the tutorials and examples on [cloud.dynamicpdf.com](cloud.dynamicpdf.com). 
 
-- **This project contains the tutorials and examples from [cloud.dynamicpdf.com](https://cloud.dynamicpdf.com)**
+The DynamicPDF Cloud API consists of the following endpoints.
+
+* `dlex-layout`
+* `image-info`
+* `pdf`
+* `pdf-info`
+* `pdf-text`
+* `pdf-xmp`
+
+The Java client project is available on Github ([java-client](https://github.com/dynamicpdf-api/java-client)). For more information, please visit [DynamicPDF Cloud API](https://cloud.dynamicpdf.com/ "DynamicPDF Cloud API Homepage"). Support for other languages/platforms (PHP, C#, Node.js) is available on GitHub ([DynamicPDF Cloud API at GitHub](https://github.com/dynamicpdf-api "DynamicPDF Cloud API at GitHub")).
 
 ## Repository
 
-The client library jar and client library source jar are available online.
+* The Java client project source is available on Github ([java-client](https://github.com/dynamicpdf-api/java-client)). 
 
-**Available on Maven**
+### **Available on Maven**
 
 https://search.maven.org/search?q=g:com.dynamicpdf.api
 
@@ -26,7 +35,7 @@ https://search.maven.org/search?q=g:com.dynamicpdf.api
 </dependency>
 ```
 
-**Apache Commons IO Library**
+### **Apache Commons IO Library**
 
 Many of the examples in this project also rely upon the Apache Commons IO library.
 
@@ -84,9 +93,11 @@ The examples project contains a Maven POM file for building the project.
 </project>
 ```
 
+* When first running any of the examples, be certain to first build the project using Maven so that your IDE pulls in all necessary dependencies. You can then run the examples for each tutorial independently from the command line.
+
 ## Resources
 
-To obtain the resources for the project, login to cloud.dynamicpdf.com (assuming you have an account), and go to the **Resource Manager**. You use the `samples` folder to add the resources for the tutorials and examples from this project.
+To obtain the resources for the project, login to [cloud.dynamicpdf.com](cloud.dynamicpdf.com) (assuming you have an account), and go to the **Resource Manager**. Use the `samples` folder to add the resources for the tutorials and examples from this project.
 
 - [Resource Manager Samples](https://cloud.dynamicpdf.com/docs/usersguide/environment-manager/environment-manager-sample-resources)  
 
@@ -97,8 +108,7 @@ For more information on the tutorials and example code, refer to:
 - https://cloud.dynamicpdf.com/docs/tutorials/tutorials-overview
 - https://cloud.dynamicpdf.com/docs/usersguide/cloud-api/cloud-api-overview
 
-* The following lists the tutorials provided by DynamicPDF Cloud API that illustrate using the API's endpoints.
-* Obtain the project, [java-client-examples](https://github.com/dynamicpdf-api/java-client-examples), to view complete worked examples for each of the following tutorials
+* The following table lists the tutorials provided by DynamicPDF Cloud API that illustrate using the API's endpoints.
 
 | Tutorial                                                     | Endpoint/Tool | Sample Project                              | Description                                                  |
 | ------------------------------------------------------------ | ------------- | ------------------------------------------- | ------------------------------------------------------------ |
