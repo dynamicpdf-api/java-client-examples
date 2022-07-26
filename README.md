@@ -6,7 +6,7 @@
 
 # java-client-examples
 
-The project contains numerous sample projects for the tutorials and examples on cloud.dynamicpdf.com. Each example project is designed to run independently. All resources can be found on the cloud.dynamicpdf.com website.
+This project contains numerous sample projects for the tutorials and examples on [cloud.dynamicpdf.com](cloud.dynamicpdf.com). Each example project is designed to run independently. All resources can be found on the cloud.dynamicpdf.com website.
 
 - **This project contains the tutorials and examples from [cloud.dynamicpdf.com](https://cloud.dynamicpdf.com)**
 
