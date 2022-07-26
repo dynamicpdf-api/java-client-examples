@@ -16,7 +16,7 @@ https://search.maven.org/search?q=g:com.dynamicpdf.api
 <dependency>
     <groupId>com.dynamicpdf.api</groupId>
     <artifactId>dynamicpdf-api</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
@@ -36,11 +36,7 @@ Many of the examples in this project also rely upon the Apache Commons IO librar
 
 The examples project contains a Maven POM file for building the project. 
 
-:::info
-
-Note that the dynamicpdf-api artifact is probably different than the version in the example POM, be certain to use the correct version when building the examples project.
-
-:::
+> :memo: *Note that the dynamicpdf-api artifact is probably different than the version in the example POM, be certain to use the correct version when building the examples project.*
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
