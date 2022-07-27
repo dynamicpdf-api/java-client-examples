@@ -19,6 +19,7 @@ For more information, please visit [DynamicPDF Cloud API](https://cloud.dynamicp
 
 ## Repository
 
+* The Java Client Examples are available on Github ([java-client-examples](https://github.com/dynamicpdf-api/java-client-examples)).
 * The Java client project source is available on Github ([java-client](https://github.com/dynamicpdf-api/java-client)). 
 
 ### **Available on Maven**
@@ -32,6 +33,8 @@ https://search.maven.org/search?q=g:com.dynamicpdf.api
     <version>1.1.0</version>
 </dependency>
 ```
+
+> :memo: *Be certain to use the latest `dynamicpdf-api` version.*
 
 ### **Apache Commons IO Library**
 
@@ -49,8 +52,6 @@ Many of the examples in this project also rely upon the Apache Commons IO librar
 
 The examples project contains a Maven POM file for building the project. 
 
-> :memo: *Note that the dynamicpdf-api artifact is probably different than the version in the example POM, be certain to use the correct version when building the examples project.*
-
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -58,7 +59,7 @@ The examples project contains a Maven POM file for building the project.
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.dynamicpdf.cloud.api.examples</groupId>
 	<artifactId>dynamicpdf-api-examples</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.1.0</version>
 	<description>DynamicPDF Cloud API Java client library examples.</description>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
