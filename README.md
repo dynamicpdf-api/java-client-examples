@@ -17,24 +17,21 @@ The DynamicPDF Cloud API consists of the following endpoints.
 
 For more information, please visit [DynamicPDF Cloud API](https://cloud.dynamicpdf.com/ "DynamicPDF Cloud API Homepage"). Support for other languages/platforms (PHP, C#, Node.js) is available on GitHub ([DynamicPDF Cloud API at GitHub](https://github.com/dynamicpdf-api "DynamicPDF Cloud API at GitHub")).
 
-## Repository
+### **`java-client` Client Library**
 
-* The Java Client Examples are available on Github ([java-client-examples](https://github.com/dynamicpdf-api/java-client-examples)).
-* The Java client project source is available on Github ([java-client](https://github.com/dynamicpdf-api/java-client)). 
+The `java-client-examples` project relies on the `java-client` library.
 
-### **Available on Maven**
+* Obtain the library from sonatype at [com.dynamicpdf.api](https://search.maven.org/search?q=g:com.dynamicpdf.api). There you will find the instructions for adding the `java-client` library to your project using Maven, Gradle, and other build systems.
 
-https://search.maven.org/search?q=g:com.dynamicpdf.api
-
-```xml
+```
 <dependency>
-    <groupId>com.dynamicpdf.api</groupId>
-    <artifactId>dynamicpdf-api</artifactId>
-    <version>1.1.0</version>
+  <groupId>com.dynamicpdf.api</groupId>
+  <artifactId>dynamicpdf-api</artifactId>
+  <version>1.1.0</version>
 </dependency>
 ```
 
-> :memo: *Be certain to use the latest `dynamicpdf-api` version.*
+> :memo: *Be certain to use the latest java-client version.*
 
 ### **Apache Commons IO Library**
 
@@ -50,7 +47,7 @@ Many of the examples in this project also rely upon the Apache Commons IO librar
 
 ### Maven
 
-The examples project contains a Maven POM file for building the project. 
+The examples project contains a sample Maven POM file for building the project. 
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -99,6 +96,10 @@ The examples project contains a Maven POM file for building the project.
 To obtain the resources for the project, login to [cloud.dynamicpdf.com](cloud.dynamicpdf.com) (assuming you have an account), and go to the **Resource Manager**. Use the `samples` folder to add the resources for the tutorials and examples from this project.
 
 - [Resource Manager Samples](https://cloud.dynamicpdf.com/docs/usersguide/environment-manager/environment-manager-sample-resources)  
+
+## Tutorials
+
+The following table lists the available tutorials.
 
 | Tutorial Title                                     | Project/File/Class      | Tutorial Location                                            |
 | -------------------------------------------------- | ----------------------- | ------------------------------------------------------------ |
