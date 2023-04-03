@@ -12,7 +12,7 @@ public class GettingStartedInFive {
 	// https://cloud.dynamicpdf.com/docs/getting-started
 
 	public static void main(String[] args) {
-		GettingStartedInFive.Run("DP.xxx--api-key--xxx",
+		GettingStartedInFive.Run("DP.xxx-api-key-xxx",
 				"C:/temp/dynamicpdf-api-samples/");
 	}
 
@@ -23,7 +23,7 @@ public class GettingStartedInFive {
 		PdfResponse pdfResponse = dlexLayout.process();
 
 		try {
-			FileUtils.writeByteArrayToFile(new File(basePath + "getting-started-output.pdf"),
+			FileUtils.writeByteArrayToFile(new File(basePath + "getting-started-java-output.pdf"),
 					pdfResponse.getContent());
 		} catch (IOException e) {
 			e.printStackTrace();

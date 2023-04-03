@@ -10,7 +10,7 @@ public class ImageInfoExample {
 
 	public static void RunOne(String key, String basePath) {
         ImageResource imageResource = null;
-        imageResource = new ImageResource(basePath + "/getting-started.png");
+        imageResource = new ImageResource(basePath + "getting-started.png");
         ImageInfo imageInfo = new ImageInfo(imageResource);
         imageInfo.setApiKey(key);
         ImageResponse response = imageInfo.process();
@@ -20,7 +20,7 @@ public class ImageInfoExample {
     public static void RunTwo(String apiKey, String basePath)
     {
         String key = apiKey;
-        ImageResource imageResource = new ImageResource(basePath + "/multipage.tiff");
+        ImageResource imageResource = new ImageResource(basePath + "multipage.tiff");
         ImageInfo imageInfo = new ImageInfo(imageResource);
         imageInfo.setApiKey(apiKey);
          ImageResponse response = imageInfo.process();
@@ -28,9 +28,9 @@ public class ImageInfoExample {
     }
 	
 	public static void main(String[] args) {
-		ImageInfoExample.RunOne("DP.xxxx--api--key--xxx",
+		ImageInfoExample.RunOne("DP.xxx-api-key-xxx",
 				"C:/temp/dynamicpdf-api-usersguide-examples/");
-		ImageInfoExample.RunTwo("DP.xxxx--api--key--xxx",
+		ImageInfoExample.RunTwo("DP.xxx-api-key-xxx",
 				"C:/temp/dynamicpdf-api-usersguide-examples/");
 	}
 }
