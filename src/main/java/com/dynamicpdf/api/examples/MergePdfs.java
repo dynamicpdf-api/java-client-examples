@@ -14,7 +14,7 @@ public class MergePdfs {
 	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-tutorial-merging-pdfs
 
 	public static void main(String[] args) {
-		MergePdfs.Run("DP.xxx--apikey--xxx",
+		MergePdfs.Run("DP.xxx-api-key-xxx",
 				"C:/temp/dynamicpdf-api-samples/");
 	}
 
@@ -48,7 +48,7 @@ public class MergePdfs {
 
 		if (pdfResponse.getIsSuccessful()) {
 			try {
-				FileUtils.writeByteArrayToFile(new File(basePath + "merge-pdfs-output.pdf"), 
+				FileUtils.writeByteArrayToFile(new File(basePath + "merge-pdfs-java-output.pdf"), 
 						pdfResponse.getContent());
 			} catch (IOException e) {
 				e.printStackTrace();

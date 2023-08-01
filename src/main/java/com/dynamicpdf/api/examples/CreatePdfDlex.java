@@ -14,33 +14,29 @@ public class CreatePdfDlex {
 	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-tutorial-dlex-pdf-endpoint
 
 	public static void main(String[] args) {
-		CreatePdfDlex.Run("DP.API-KEY",
-				"C:/temp/dynamicpdf-api-samples/dlex-layout-example");
+		CreatePdfDlex.Run("DP.xxx-api-key-xxx",
+				"C:/temp/dynamicpdf-api-samples/create-pdf-dlex/");
 	}
 
     public static void Run(String apiKey, String basePath)
     {
         Pdf pdf = new Pdf();
         pdf.setApiKey(apiKey);
-        LayoutDataResource layoutDataResource = new LayoutDataResource(basePath + "/SimpleReportWithCoverPage.json");
+        LayoutDataResource layoutDataResource = new LayoutDataResource(basePath + "SimpleReportWithCoverPage.json");
         pdf.addDlex("samples/creating-pdf-pdf-endpoint/SimpleReportWithCoverPage.dlex", layoutDataResource);
 
         PdfResponse response = pdf.process();
 
-        System.out.println("Status Code: " + response.getStatusCode());
-        
 		if(response.getIsSuccessful())
 		{
 			try {
-				FileUtils.writeByteArrayToFile(new File(basePath + "/create-pdf-dlex-java-output.pdf"),
+				FileUtils.writeByteArrayToFile(new File(basePath + "create-pdf-dlex-java-output.pdf"),
 						response.getContent());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		} else
 		{
-			System.out.println("errorid: " + response.getErrorId());
-			System.out.println("error msg: " + response.getErrorMessage());	
 			System.out.println(response.getErrorJson());
 		}
     }

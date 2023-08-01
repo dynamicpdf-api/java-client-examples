@@ -35,7 +35,7 @@ public class InstructionsExamples {
 			System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.getInstructionsJson()));
 			System.out.println("==================================================================");
 			try {
-				FileUtils.writeByteArrayToFile(new File(basePath + "/output/" + outputFile), response.getContent());
+				FileUtils.writeByteArrayToFile(new File(basePath + "output/" + outputFile), response.getContent());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -43,9 +43,11 @@ public class InstructionsExamples {
 	}
 
 	public static void main(String[] args) {
+		InstructionsExamples.Run("DP.xxx-api-key-xxx",
+		"c:/temp/dynamicpdf-api-usersguide-examples/");
+	}
 
-		String apiKey = "DP.xxx--api-key--xxx";
-		String basePath = "c:/temp/dynamicpdf-api-usersguide-examples/";
+	public static void Run(String apiKey, String basePath) {
 
 		Pdf exampleOne = InstructionsExamples.TopLevelMetaData();
 		InstructionsExamples.printOut(exampleOne, apiKey, basePath, "java-top-level-metadata-output.pdf");
@@ -59,13 +61,13 @@ public class InstructionsExamples {
 		InstructionsExamples.printOut(exampleFour, apiKey, basePath, "java-merging-output.pdf");
 
 		Pdf exampleFive = InstructionsExamples.FormFieldsExample(basePath);
-		InstructionsExamples.printOut(exampleFive, apiKey, basePath, "java-form-output.pdf");
+		InstructionsExamples.printOut(exampleFive, apiKey, basePath, "java-form-fields-output.pdf");
 
 		Pdf exampleSix = InstructionsExamples.AddOutlinesForNewPdf();
-		InstructionsExamples.printOut(exampleFive, apiKey, basePath, "java-outline-create-output.pdf");
+		InstructionsExamples.printOut(exampleSix, apiKey, basePath, "java-outline-create-output.pdf");
 
 		Pdf exampleSeven = InstructionsExamples.AddOutlinesExistingPdf(basePath);
-		InstructionsExamples.printOut(exampleSix, apiKey, basePath, "java-outline-existing-output.pdf");
+		InstructionsExamples.printOut(exampleSeven, apiKey, basePath, "java-outline-existing-output.pdf");
 
 		Pdf exampleEight = InstructionsExamples.TemplateExample(basePath);
 		InstructionsExamples.printOut(exampleEight, apiKey, basePath, "java-templates-output.pdf");
@@ -111,7 +113,7 @@ public class InstructionsExamples {
 		pageNumberingElementTwo.setFont(new Font(cloudResourceName));
 		pageNumberingElementTwo.setFontSize(32);
 
-		String filePathFont = basePath + "/cnr.otf";
+		String filePathFont = basePath + "cnr.otf";
 		PageNumberingElement pageNumberingElementThree = new PageNumberingElement("C", ElementPlacement.TOPCENTER);
 		pageNumberingElementThree.setColor(RgbColor.getGreen());
 		pageNumberingElementThree.setFont(Font.fromFile(filePathFont));
@@ -125,7 +127,7 @@ public class InstructionsExamples {
 	}
 
 	public static Pdf SecurityExample(String basePath) {
-		String fileResource = basePath + "/DocumentB.pdf";
+		String fileResource = basePath + "DocumentB.pdf";
 		String userName = "myuser";
 		String passWord = "mypassword";
 		Pdf pdf = new Pdf();
@@ -208,7 +210,7 @@ public class InstructionsExamples {
 		Pdf pdf = new Pdf();
 		pdf.setAuthor("John User");
 		pdf.setTitle("Template Example");
-		PdfResource resource = new PdfResource(basePath + "/DocumentA.pdf");
+		PdfResource resource = new PdfResource(basePath + "DocumentA.pdf");
 		PdfInput input = new PdfInput(resource);
 		pdf.getInputs().add(input);
 
@@ -225,7 +227,7 @@ public class InstructionsExamples {
 		pdf.setAuthor("John Doe");
 		pdf.setTitle("Barcode Example");
 
-		PdfResource resource = new PdfResource(basePath + "/DocumentA.pdf");
+		PdfResource resource = new PdfResource(basePath + "DocumentA.pdf");
 		PdfInput input = new PdfInput(resource);
 		pdf.getInputs().add(input);
 

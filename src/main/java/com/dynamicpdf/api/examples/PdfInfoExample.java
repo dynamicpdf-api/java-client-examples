@@ -16,7 +16,7 @@ public class PdfInfoExample {
 	} 
 	
 	public static void main(String[] args) {
-		PdfInfoExample.Run("DP.xxx--apikey--xxx",
+		PdfInfoExample.Run("DP.xxx-api-key-xxx",
 				"C:/temp/dynamicpdf-api-usersguide-examples/");
 	}
 

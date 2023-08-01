@@ -11,14 +11,14 @@ import com.dynamicpdf.api.PdfResponse;
 public class DesignerReportTemplate {
 
 	public static void main(String[] args) {
-		DesignerReportTemplate.Run("DP.api-key",
+		DesignerReportTemplate.Run("DP.xxx-api-key-xxx",
 					"C:/temp/dynamicpdf-api-samples/using-dlex-layout/");
 		}
 	
 	   public static void Run(String apiKey, String basePath)
 	    {
 		   
-		    LayoutDataResource layoutDataResource = new LayoutDataResource(basePath + "/invoice-local.json");
+		    LayoutDataResource layoutDataResource = new LayoutDataResource(basePath + "invoice-local.json");
 	        DlexLayout dlexLayout = new DlexLayout("samples/creating-a-report-template-designer/invoice.dlex", 
 	        		layoutDataResource);
 	        dlexLayout.setApiKey(apiKey);
@@ -28,7 +28,7 @@ public class DesignerReportTemplate {
 			if(response.getIsSuccessful())
 			{
 				try {
-					FileUtils.writeByteArrayToFile(new File(basePath + "/invoice-java-output.pdf"),
+					FileUtils.writeByteArrayToFile(new File(basePath + "invoice-java-output.pdf"),
 							response.getContent());
 				} catch (IOException e) {
 					e.printStackTrace();

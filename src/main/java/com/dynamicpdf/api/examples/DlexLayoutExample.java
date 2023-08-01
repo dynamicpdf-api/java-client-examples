@@ -14,14 +14,14 @@ public class DlexLayoutExample {
 	
 	
 	public static void CreatePDF(String apiKey, String basePath) {
-		  LayoutDataResource layoutData = new LayoutDataResource(basePath + "/getting-started-data.json");
-		  DlexLayout dlexEndpoint = new DlexLayout("samples/shared/dlex/getting-started.dlex", layoutData);
+		  LayoutDataResource layoutData = new LayoutDataResource(basePath + "getting-started.json");
+		  DlexLayout dlexEndpoint = new DlexLayout("samples/getting-started/getting-started.dlex", layoutData);
 		  dlexEndpoint.setApiKey(apiKey);
 		  PdfResponse response = dlexEndpoint.process();
 		  
 		  if (response.getIsSuccessful()==true) {
 		    try {
-		      FileUtils.writeByteArrayToFile(new File(basePath + "/java-dlex-output.pdf"), 
+		      FileUtils.writeByteArrayToFile(new File(basePath + "java-dlex-output.pdf"), 
 		    		  (byte[])response.getContent());
 		    } catch (IOException e) {
 		      e.printStackTrace();
@@ -32,6 +32,7 @@ public class DlexLayoutExample {
 		}
 
 	public static void main(String[] args) {
-		DlexLayoutExample.CreatePDF(args[0], args[1]);
+		DlexLayoutExample.CreatePDF("DP.xxx-api-key-xxx",
+		"C:/temp/dynamicpdf-api-samples/using-dlex-layout/");
 	}
 }

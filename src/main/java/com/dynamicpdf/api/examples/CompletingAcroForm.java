@@ -12,7 +12,7 @@ import com.dynamicpdf.api.PdfResponse;
 public class CompletingAcroForm {
 
 	public static void main(String[] args) {
-		CompletingAcroForm.Run("DP.---API-KEY---", "c:/temp/dynamicpdf-api-samples/fill-acro-form/");
+		CompletingAcroForm.Run("DP.xxx-api-key-xxx", "c:/temp/dynamicpdf-api-samples/fill-acro-form/");
 	}
 	
 	public static void Run(String apiKey, String basePath) {
@@ -45,7 +45,7 @@ public class CompletingAcroForm {
         
         if(response.getIsSuccessful()) {
         	try {
-				FileUtils.writeByteArrayToFile(new File(basePath + "fill-acro-form-output.pdf"), response.getContent());
+				FileUtils.writeByteArrayToFile(new File(basePath + "fill-acro-form-java-output.pdf"), response.getContent());
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

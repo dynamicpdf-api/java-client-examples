@@ -10,7 +10,7 @@ public class ExtractText {
 	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-text/tutorial-pdf-text
 
 	public static void main(String[] args) {
-		ExtractText.Run("DP ---API-KEY---",
+		ExtractText.Run("DP.xxx-api-key-xxx",
 				"C:/temp/dynamicpdf-api-samples/extract-text/");
 
 	}
