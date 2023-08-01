@@ -15,7 +15,7 @@ public class CreatePdfDlex {
 
 	public static void main(String[] args) {
 		CreatePdfDlex.Run("DP.API-KEY",
-				"C:/temp/dynamicpdf-api-samples/create-pdf-dlex");
+				"C:/temp/dynamicpdf-api-samples/dlex-layout-example");
 	}
 
     public static void Run(String apiKey, String basePath)
@@ -27,6 +27,8 @@ public class CreatePdfDlex {
 
         PdfResponse response = pdf.process();
 
+        System.out.println("Status Code: " + response.getStatusCode());
+        
 		if(response.getIsSuccessful())
 		{
 			try {
@@ -37,6 +39,8 @@ public class CreatePdfDlex {
 			}
 		} else
 		{
+			System.out.println("errorid: " + response.getErrorId());
+			System.out.println("error msg: " + response.getErrorMessage());	
 			System.out.println(response.getErrorJson());
 		}
     }
