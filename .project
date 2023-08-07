@@ -3,6 +3,7 @@
 	<name>dynamicpdf-api-examples</name>
 	<comment></comment>
 	<projects>
+		<project>dynamicpdf-api</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
