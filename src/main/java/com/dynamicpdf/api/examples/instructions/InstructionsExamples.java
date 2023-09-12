@@ -2,20 +2,24 @@ package com.dynamicpdf.api.examples.instructions;
 
 import java.io.File;
 import java.io.IOException;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import org.apache.commons.io.FileUtils;
 
 import com.dynamicpdf.api.Aes256Security;
-import com.dynamicpdf.api.DlexLayout;
+
 import com.dynamicpdf.api.DlexResource;
 import com.dynamicpdf.api.Font;
 import com.dynamicpdf.api.FormField;
+import com.dynamicpdf.api.HtmlResource;
 import com.dynamicpdf.api.ImageResource;
 import com.dynamicpdf.api.LayoutDataResource;
 import com.dynamicpdf.api.Outline;
 import com.dynamicpdf.api.PageInput;
+import com.dynamicpdf.api.PageOrientation;
+import com.dynamicpdf.api.PageSize;
 import com.dynamicpdf.api.Pdf;
 import com.dynamicpdf.api.PdfInput;
 import com.dynamicpdf.api.PdfResource;
@@ -42,7 +46,7 @@ public class InstructionsExamples {
 			System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.getInstructionsJson()));
 			System.out.println("==================================================================");
 			try {
-				FileUtils.writeByteArrayToFile(new File(basePath + "output/" + outputFile), response.getContent());
+				FileUtils.writeByteArrayToFile(new File(basePath + "java-output/" + outputFile), response.getContent());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -50,65 +54,82 @@ public class InstructionsExamples {
 	}
 
 	public static void main(String[] args) {
-		InstructionsExamples.Run("DP--API-KEY---",
-		"c:/temp/users-guide-resources/");
+		InstructionsExamples.Run("DP.s2eSlDpAF80sPSdNDRi5wBfeVJQVeI1Q0CqqGubveJP/TLBiNNDWZpmH", "c:/temp/users-guide-resources/",
+				"c:/temp/dynamicpdf-api-usersguide-examples/");
 	}
 
-	public static void Run(String apiKey, String basePath) {
+	public static void Run(String apiKey, String basePath, String outputPath) {
 
-/*		Pdf exampleOne = InstructionsExamples.TopLevelMetaData();
-		InstructionsExamples.printOut(exampleOne, apiKey, basePath, "java-top-level-metadata-output.pdf");
-		Pdf exampleTwo = InstructionsExamples.FontsExample(basePath);
-		InstructionsExamples.printOut(exampleTwo, apiKey, basePath, "java-fonts-output.pdf");
-
-		Pdf exampleThree = InstructionsExamples.SecurityExample(basePath);
-		InstructionsExamples.printOut(exampleThree, apiKey, basePath, "java-security-output.pdf");
-
-		Pdf exampleFour = InstructionsExamples.MergeExample(basePath);
-		InstructionsExamples.printOut(exampleFour, apiKey, basePath, "java-merging-output.pdf");
-
-		Pdf exampleFive = InstructionsExamples.FormFieldsExample(basePath);
-		InstructionsExamples.printOut(exampleFive, apiKey, basePath, "java-form-fields-output.pdf");
-
-		Pdf exampleSix = InstructionsExamples.AddOutlinesForNewPdf();
-		InstructionsExamples.printOut(exampleSix, apiKey, basePath, "java-outline-create-output.pdf");
-
-		Pdf exampleSeven = InstructionsExamples.AddOutlinesExistingPdf(basePath);
-		InstructionsExamples.printOut(exampleSeven, apiKey, basePath, "java-outline-existing-output.pdf");
-
-		Pdf exampleEight = InstructionsExamples.TemplateExample(basePath);
-		InstructionsExamples.printOut(exampleEight, apiKey, basePath, "java-templates-output.pdf");
-
-		Pdf exampleNine = InstructionsExamples.BarcodeExample(basePath);
-		InstructionsExamples.printOut(exampleNine, apiKey, basePath, "java-barcode-output.pdf");
-	
-		Pdf exampleTen = InstructionsExamples.DlexExample(basePath);
-		InstructionsExamples.printOut(exampleTen, apiKey, basePath, "java-dlex-output.pdf");
-
-		Pdf exampleEleven = InstructionsExamples.DlexExampleObject(basePath);
-		InstructionsExamples.printOut(exampleEleven, apiKey, basePath, "java-dlex-object-output.pdf");
-
-		Pdf exampleTwelve = InstructionsExamples.ImageExample(basePath);
-		InstructionsExamples.printOut(exampleTwelve, apiKey, basePath, "java-image-output.pdf");
 		
-		Pdf exampleThirteen = InstructionsExamples.PageExample(basePath);
-		InstructionsExamples.printOut(exampleThirteen, apiKey, basePath, "java-page-output.pdf");
-*/		
+		  Pdf exampleOne = InstructionsExamples.TopLevelMetaData();
+		  InstructionsExamples.printOut(exampleOne, apiKey, outputPath,
+		  "java-top-level-metadata-output.pdf"); 
+		  
+		  Pdf exampleTwo =
+		  InstructionsExamples.FontsExample(basePath);
+		  InstructionsExamples.printOut(exampleTwo, apiKey, outputPath,
+		  "java-fonts-output.pdf");
+		  
+		  Pdf exampleThree = InstructionsExamples.SecurityExample(basePath);
+		  InstructionsExamples.printOut(exampleThree, apiKey, outputPath,
+		  "java-security-output.pdf");
+		  
+		  Pdf exampleFour = InstructionsExamples.MergeExample(basePath);
+		  InstructionsExamples.printOut(exampleFour, apiKey, outputPath,
+		  "java-merging-output.pdf");
+		  
+		  Pdf exampleFive = InstructionsExamples.FormFieldsExample(basePath);
+		  InstructionsExamples.printOut(exampleFive, apiKey, outputPath,
+		  "java-form-fields-output.pdf");
+		  
+		  Pdf exampleSix = InstructionsExamples.AddOutlinesForNewPdf();
+		  InstructionsExamples.printOut(exampleSix, apiKey, outputPath,
+		  "java-outline-create-output.pdf");
+		  
+		  Pdf exampleSeven = InstructionsExamples.AddOutlinesExistingPdf(basePath);
+		  InstructionsExamples.printOut(exampleSeven, apiKey, outputPath,
+		  "java-outline-existing-output.pdf");
+		  
+		  Pdf exampleEight = InstructionsExamples.TemplateExample(basePath);
+		  InstructionsExamples.printOut(exampleEight, apiKey, outputPath,
+		  "java-templates-output.pdf");
+		  
+		  Pdf exampleNine = InstructionsExamples.BarcodeExample(basePath);
+		  InstructionsExamples.printOut(exampleNine, apiKey, outputPath,
+		  "java-barcode-output.pdf");
+		  
+		  Pdf exampleTen = InstructionsExamples.DlexExample(basePath);
+		  InstructionsExamples.printOut(exampleTen, apiKey, outputPath,
+		  "java-dlex-output.pdf");
+		  
+		  Pdf exampleEleven = InstructionsExamples.DlexExampleObject(basePath);
+		  InstructionsExamples.printOut(exampleEleven, apiKey, outputPath,
+		  "java-dlex-object-output.pdf");
+		  
+		  Pdf exampleTwelve = InstructionsExamples.ImageExample(basePath);
+		  InstructionsExamples.printOut(exampleTwelve, apiKey, outputPath,
+		  "java-image-output.pdf");
+		  
+		  Pdf exampleThirteen = InstructionsExamples.PageExample(basePath);
+		  InstructionsExamples.printOut(exampleThirteen, apiKey, outputPath,
+		  "java-page-output.pdf");
+		 
+		
 		Pdf exampleFourteen = InstructionsExamples.PdfExample(basePath);
-		InstructionsExamples.printOut(exampleFourteen, apiKey, basePath, "java-pdf-output.pdf");
+		InstructionsExamples.printOut(exampleFourteen, apiKey, outputPath, "java-pdf-output.pdf");
 
-		
+		Pdf exampleFifteen = InstructionsExamples.HtmlExample(basePath);
+		InstructionsExamples.printOut(exampleFifteen, apiKey, outputPath, "java-html-pdf-output.pdf");
 		
 	}
-	
-	
+
 	public static Pdf PdfExample(String basePath) {
-		
+
 		Pdf pdf = new Pdf();
 
-		//get pdf from local file system
+		// get pdf from local file system
 		pdf.addPdf(new PdfResource(basePath + "DocumentA.pdf"));
-					
+
 		// get pdf from bytes
 		PdfResource resource = null;
 		try {
@@ -118,20 +139,18 @@ public class InstructionsExamples {
 		}
 		pdf.addPdf(resource);
 
-		//get pdf from cloud storage
+		// get pdf from cloud storage
 		pdf.addPdf("samples/users-guide-resources/DocumentC.pdf");
 		return pdf;
-		
+
 	}
-	
-	
+
 	public static Pdf PageExample(String basePath) {
 
 		Pdf pdf = new Pdf();
 
 		PageInput pageInput = pdf.addPage(1008, 612);
-		PageNumberingElement pageNumberingElement = 
-				new PageNumberingElement("1", ElementPlacement.TOPRIGHT);
+		PageNumberingElement pageNumberingElement = new PageNumberingElement("1", ElementPlacement.TOPRIGHT);
 		pageNumberingElement.setColor(RgbColor.getRed());
 		pageNumberingElement.setFont(Font.getCourier());
 		pageNumberingElement.setFontSize(42);
@@ -142,15 +161,15 @@ public class InstructionsExamples {
 
 		return pdf;
 	}
-	
+
 	public static Pdf ImageExample(String basePath) {
-		
+
 		Pdf pdf = new Pdf();
-		//get image from local system
+		// get image from local system
 		ImageResource ir = new ImageResource("C:/temp/users-guide-resources/A.png");
 		pdf.addImage(ir);
-		
-		//get Image as binary from local system
+
+		// get Image as binary from local system
 		ImageResource ir2 = null;
 		try {
 			ir2 = new ImageResource(Files.readAllBytes(Paths.get(basePath + "B.png")));
@@ -158,26 +177,25 @@ public class InstructionsExamples {
 			e.printStackTrace();
 		}
 		pdf.addImage(ir2);
-		//get image from cloud storage
+		// get image from cloud storage
 		pdf.addImage("samples/users-guide-resources/C.png");
-		return pdf;	
+		return pdf;
 	}
-	
-	
+
 	public static Pdf DlexExample(String basePath) {
-		
-        Pdf pdf = new Pdf();     
-        
-        //create pdf using local dlex and embedded image
-        
-        LayoutDataResource layoutDataResource = new LayoutDataResource(basePath + "SimpleReportWithCoverPage.json");
-        DlexResource dlexResource = new DlexResource(basePath + "SimpleReportWithCoverPage.dlex");
-        pdf.addDlex(dlexResource, layoutDataResource);
-        pdf.addAdditionalResource("c:/temp/users-guide-resources/NorthwindLogo.gif");
-        
-        /// create pdf using cloud storage dlex and binary JSON data
-        
-        String jsonData = null;
+
+		Pdf pdf = new Pdf();
+
+		// create pdf using local dlex and embedded image
+
+		LayoutDataResource layoutDataResource = new LayoutDataResource(basePath + "SimpleReportWithCoverPage.json");
+		DlexResource dlexResource = new DlexResource(basePath + "SimpleReportWithCoverPage.dlex");
+		pdf.addDlex(dlexResource, layoutDataResource);
+		pdf.addAdditionalResource("c:/temp/users-guide-resources/NorthwindLogo.gif");
+
+		/// create pdf using cloud storage dlex and binary JSON data
+
+		String jsonData = null;
 
 		try {
 			jsonData = Files.readString(Paths.get(basePath + "SimpleReportWithCoverPage.json"));
@@ -187,23 +205,21 @@ public class InstructionsExamples {
 
 		LayoutDataResource layoutData2 = new LayoutDataResource(jsonData);
 		pdf.addDlex("samples/users-guide-resources/SimpleReportWithCoverPage.dlex", layoutData2);
-		
-				
-        return pdf;
+
+		return pdf;
 	}
-	
-	
+
 	public static Pdf DlexExampleObject(String basePath) {
-		
+
 		String jsonText = null;
 		SimpleReport simpleReport = null;
-		
-		Pdf pdf = new Pdf();     
-		
+
+		Pdf pdf = new Pdf();
+
 		try {
-			
+
 			jsonText = Files.readString(Paths.get(basePath + "/SimpleReportWithCoverPage.json"));
-		
+
 			// ObjectMapper instantiation
 			ObjectMapper objectMapper = new ObjectMapper();
 
@@ -216,7 +232,7 @@ public class InstructionsExamples {
 			System.out.println(basicMapper.writerWithDefaultPrettyPrinter().writeValueAsString(simpleReport));
 
 			jsonText = basicMapper.writeValueAsString(simpleReport);
-			
+
 			try {
 				jsonText = Files.readString(Paths.get(basePath + "SimpleReportWithCoverPage.json"));
 			} catch (IOException e1) {
@@ -229,11 +245,35 @@ public class InstructionsExamples {
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
+
+		return pdf;
+
+	}
+
+	public static Pdf HtmlExample(String basePath) {
+		
+		Pdf pdf = new Pdf();
+
+		pdf.AddHtml("<html>An example HTML fragment.</html>", null, PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
+
+		// use basepath in an HTML string
+		pdf.AddHtml("<html><p style='color:red;font-family:verdana;font-size:30px'>HTML with basePath.</p><img src='./images/logo.png'></img></html>",
+				"https://www.dynamicpdf.com", PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
+
+		// add html from a path on local drive
+		String temp = null;
+		
+		try {
+			temp = Files.readString(Paths.get(basePath + "products.html"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		HtmlResource resource = new HtmlResource(temp);
+		pdf.AddHtml(resource, null, PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
 		
 		return pdf;
-		
 	}
-	
 
 	public static Pdf TopLevelMetaData() {
 
@@ -301,7 +341,7 @@ public class InstructionsExamples {
 	public static Pdf MergeExample(String basePath) {
 		Pdf pdf = new Pdf();
 		PdfResource resourceA = new PdfResource(basePath + "DocumentA.pdf");
-		ImageResource imageResource = new ImageResource(basePath + "dynamicpdfLogo.png");
+		ImageResource imageResource = new ImageResource(basePath + "DPDFLogo.png");
 		PdfResource resourceB = new PdfResource(basePath + "DocumentB.pdf");
 		pdf.addPdf(resourceA);
 		pdf.addImage(imageResource);
