@@ -54,7 +54,7 @@ public class InstructionsExamples {
 	}
 
 	public static void main(String[] args) {
-		InstructionsExamples.Run("DP.s2eSlDpAF80sPSdNDRi5wBfeVJQVeI1Q0CqqGubveJP/TLBiNNDWZpmH", "c:/temp/users-guide-resources/",
+		InstructionsExamples.Run("DP ---API-KEY---", "c:/temp/users-guide-resources/",
 				"c:/temp/dynamicpdf-api-usersguide-examples/");
 	}
 

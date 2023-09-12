@@ -53,7 +53,7 @@ public class PdfHtmlCssWorkAroundExample {
 	}
 
 	public static void main(String[] args) {
-		PdfHtmlCssWorkAroundExample.Run("DP.s2eSlDpAF80sPSdNDRi5wBfeVJQVeI1Q0CqqGubveJP/TLBiNNDWZpmH", 
+		PdfHtmlCssWorkAroundExample.Run("DP ---API-KEY---", 
 				"C:/temp/users-guide-resources/", "c:/temp/dynamicpdf-api-usersguide-examples/java-output/");
 	}
 
