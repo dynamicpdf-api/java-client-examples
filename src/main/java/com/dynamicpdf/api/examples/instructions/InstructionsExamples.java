@@ -26,6 +26,8 @@ import com.dynamicpdf.api.PdfResource;
 import com.dynamicpdf.api.PdfResponse;
 import com.dynamicpdf.api.RgbColor;
 import com.dynamicpdf.api.Template;
+import com.dynamicpdf.api.WordInput;
+import com.dynamicpdf.api.WordResource;
 import com.dynamicpdf.api.elements.AztecBarcodeElement;
 import com.dynamicpdf.api.elements.ElementPlacement;
 import com.dynamicpdf.api.elements.PageNumberingElement;
@@ -54,7 +56,7 @@ public class InstructionsExamples {
 	}
 
 	public static void main(String[] args) {
-		InstructionsExamples.Run("DP ---API-KEY---", "c:/temp/users-guide-resources/",
+		InstructionsExamples.Run("DP---API-KEY---", "c:/temp/users-guide-resources/",
 				"c:/temp/dynamicpdf-api-usersguide-examples/");
 	}
 
@@ -120,6 +122,9 @@ public class InstructionsExamples {
 
 		Pdf exampleFifteen = InstructionsExamples.HtmlExample(basePath);
 		InstructionsExamples.printOut(exampleFifteen, apiKey, outputPath, "java-html-pdf-output.pdf");
+		
+		Pdf exampleSixteen = InstructionsExamples.WordExample(basePath);
+		InstructionsExamples.printOut(exampleSixteen, apiKey, outputPath, "java-word-pdf-output.pdf");
 		
 	}
 
@@ -250,6 +255,29 @@ public class InstructionsExamples {
 
 	}
 
+	
+	public static Pdf WordExample(String basePath)
+    {
+
+		Pdf pdf = new Pdf();
+
+		WordResource wordResource = new WordResource(basePath + "Doc1.docx");
+		WordInput word = new WordInput(wordResource);
+
+		word.setPageWidth(300);
+		word.setPageHeight(200);
+
+		word.setTopMargin(10F);
+		word.setBottomMargin(10F);
+		word.setRightMargin(40F);
+		word.setLeftMargin(40F);
+
+		pdf.getInputs().add(word);
+
+		return pdf;
+
+	}
+	
 	public static Pdf HtmlExample(String basePath) {
 		
 		Pdf pdf = new Pdf();
