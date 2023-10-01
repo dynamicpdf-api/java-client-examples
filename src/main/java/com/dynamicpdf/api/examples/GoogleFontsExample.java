@@ -41,7 +41,7 @@ public class GoogleFontsExample {
     }
     
 	public static void main(String[] args) {
-		GoogleFontsExample.Run("DP.---API key---",
+		GoogleFontsExample.Run("DP.xxx-api-key-xxx",
 				"C:/temp/dynamicpdf-api-usersguide-examples/");
 	}
 
