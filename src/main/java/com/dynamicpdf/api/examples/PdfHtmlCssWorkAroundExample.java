@@ -40,7 +40,7 @@ public class PdfHtmlCssWorkAroundExample {
 
 
 		HtmlResource resource = new HtmlResource(sb.toString());
-		pdf.AddHtml(resource, null, PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
+		pdf.addHtml(resource, null, PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
 
 		PdfResponse pdfResponse = pdf.process();
 
@@ -53,7 +53,7 @@ public class PdfHtmlCssWorkAroundExample {
 	}
 
 	public static void main(String[] args) {
-		PdfHtmlCssWorkAroundExample.Run("DP ---API-KEY---", 
+		PdfHtmlCssWorkAroundExample.Run("DP.xxx-api-key-xxx", 
 				"C:/temp/users-guide-resources/", "c:/temp/dynamicpdf-api-usersguide-examples/java-output/");
 	}
 
