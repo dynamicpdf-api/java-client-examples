@@ -13,7 +13,7 @@ import com.dynamicpdf.api.PdfResponse;
 public class AsyncExample {
 
 	public static void main(String[] args) {
-		 Run("DP.HBwj23Eo4r7mcTy2We4ezHfNr2DRXS+qnKP1udc1d0pAS7VLKGfEfVd7", "c:/temp/dynamicpdf-api-samples/async-example/");
+		 Run("DP.xxx-api-key-xxx", "c:/temp/dynamicpdf-api-samples/async-example/");
 	}
 
 	public static void Run(String apiKey, String basePath) {

@@ -41,6 +41,6 @@ public class DlexLayoutExampleString {
 	}
 
 	public static void main(String[] args) {
-		DlexLayoutExampleString.CreatePDF("DP.xxxx--api--key--xxx", "c:/temp/dlex-layout-example");
+		DlexLayoutExampleString.CreatePDF("DP.xxx-api-key-xxx", "c:/temp/dlex-layout-example");
 	}
 }

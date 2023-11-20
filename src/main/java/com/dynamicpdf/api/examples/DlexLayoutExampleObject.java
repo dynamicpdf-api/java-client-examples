@@ -37,7 +37,7 @@ public class DlexLayoutExampleObject {
 	public static void main(String[] args) {
 		SimpleReport simpleReport = DlexLayoutExampleObject
 				.testJsonParsingAndReturnObject("c:/temp/dlex-layout-example");
-		DlexLayoutExampleObject.CreatePDF("DP.xxxx--api--key--xxx", "c:/temp/dlex-layout-example", simpleReport);
+		DlexLayoutExampleObject.CreatePDF("DP.xxx-api-key-xxx", "c:/temp/dlex-layout-example", simpleReport);
 	}
 
 	public static SimpleReport testJsonParsingAndReturnObject(String basePath) {
