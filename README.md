@@ -97,7 +97,7 @@ To obtain the resources for the project, login to [cloud.dynamicpdf.com](cloud.d
 
 - [Resource Manager Samples](https://cloud.dynamicpdf.com/docs/usersguide/environment-manager/environment-manager-sample-resources)
 
-- You need the following samples folder in your Cloud Storage space to run all the examples.
+You need the following samples folder in your Cloud Storage space to run all the examples.
 
 * samples/report-with-cover-page
 * samples/creating-pdf-pdf-endpoint
