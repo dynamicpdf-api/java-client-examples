@@ -27,7 +27,7 @@ The `java-client-examples` project relies on the `java-client` library.
 <dependency>
   <groupId>com.dynamicpdf.api</groupId>
   <artifactId>dynamicpdf-api</artifactId>
-  <version>1.1.0</version>
+  <version>1.5.0</version>
 </dependency>
 ```
 
@@ -67,7 +67,7 @@ The examples project contains a sample Maven POM file for building the project.
 			<dependency>
 				<groupId>com.dynamicpdf.api</groupId>
 				<artifactId>dynamicpdf-api</artifactId>
-				<version>0.9.0</version>
+				<version>1.5.0</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-io</groupId>
@@ -95,7 +95,18 @@ The examples project contains a sample Maven POM file for building the project.
 
 To obtain the resources for the project, login to [cloud.dynamicpdf.com](cloud.dynamicpdf.com) (assuming you have an account), and go to the **Resource Manager**. Use the `samples` folder to add the resources for the tutorial or example.  Resources for Users Guide sample code is available in the `users-guide-resources` project.
 
-- [Resource Manager Samples](https://cloud.dynamicpdf.com/docs/usersguide/environment-manager/environment-manager-sample-resources)  
+- [Resource Manager Samples](https://cloud.dynamicpdf.com/docs/usersguide/environment-manager/environment-manager-sample-resources)
+
+- You need the following samples folder in your Cloud Storage space to run all the examples.
+
+samples/report-with-cover-page
+samples/creating-pdf-pdf-endpoint
+samples/creating-a-report-template-designer
+samples/creating-a-page-template-designer
+samples/dlex-layout
+samples/merge-pdfs-pdf-endpoint
+samples/fill-acro-form-pdf-endpoint
+samples/creating-a-page-template-designer
 
 ## Tutorials
 
