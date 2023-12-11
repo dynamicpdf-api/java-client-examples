@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 
 import com.dynamicpdf.api.DlexLayout;
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.LayoutDataResource;
 import com.dynamicpdf.api.PdfResponse;
 import com.dynamicpdf.api.util.PrettyPrintUtility;
@@ -13,7 +14,7 @@ import com.dynamicpdf.api.util.PrettyPrintUtility;
 public class DlexLayoutExample {
 	
 	
-	public static void CreatePDF(String apiKey, String basePath) {
+	public static void Run(String apiKey, String basePath) {
 		  LayoutDataResource layoutData = new LayoutDataResource(basePath + "getting-started.json");
 		  DlexLayout dlexEndpoint = new DlexLayout("samples/getting-started/getting-started.dlex", layoutData);
 		  dlexEndpoint.setApiKey(apiKey);
@@ -32,7 +33,6 @@ public class DlexLayoutExample {
 		}
 
 	public static void main(String[] args) {
-		DlexLayoutExample.CreatePDF("DP.xxx-api-key-xxx",
-		"C:/temp/dynamicpdf-api-samples/using-dlex-layout/");
+		DlexLayoutExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/getting-started/");
 	}
 }

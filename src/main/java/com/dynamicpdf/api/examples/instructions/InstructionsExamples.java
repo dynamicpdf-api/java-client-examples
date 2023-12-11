@@ -11,6 +11,7 @@ import org.apache.commons.io.FileUtils;
 import com.dynamicpdf.api.Aes256Security;
 
 import com.dynamicpdf.api.DlexResource;
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.Font;
 import com.dynamicpdf.api.FormField;
 import com.dynamicpdf.api.HtmlResource;
@@ -54,8 +55,7 @@ public class InstructionsExamples {
 	}
 
 	public static void main(String[] args) {
-		InstructionsExamples.Run("DP.xxx-api-key-xxx", "c:/temp/users-guide-resources/",
-				"c:/temp/dynamicpdf-api-usersguide-examples/");
+		InstructionsExamples.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.USERS_GUIDE_RESOURCE_PATH, DynamicPdfCloudApiExamples.OUTPUT_PATH + "/users-guide-output/");
 	}
 
 	public static void Run(String apiKey, String basePath, String outputPath) {
@@ -166,7 +166,7 @@ public class InstructionsExamples {
 
 		Pdf pdf = new Pdf();
 		// get image from local system
-		ImageResource ir = new ImageResource("C:/temp/users-guide-resources/A.png");
+		ImageResource ir = new ImageResource(basePath + "A.png");
 		pdf.addImage(ir);
 
 		// get Image as binary from local system
@@ -191,7 +191,7 @@ public class InstructionsExamples {
 		LayoutDataResource layoutDataResource = new LayoutDataResource(basePath + "SimpleReportWithCoverPage.json");
 		DlexResource dlexResource = new DlexResource(basePath + "SimpleReportWithCoverPage.dlex");
 		pdf.addDlex(dlexResource, layoutDataResource);
-		pdf.addAdditionalResource("c:/temp/users-guide-resources/NorthwindLogo.gif");
+		pdf.addAdditionalResource(basePath + "/NorthwindLogo.gif");
 
 		/// create pdf using cloud storage dlex and binary JSON data
 
@@ -254,10 +254,10 @@ public class InstructionsExamples {
 		
 		Pdf pdf = new Pdf();
 
-		pdf.addHtml("<html>An example HTML fragment.</html>", null, PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
+		pdf.AddHtml("<html>An example HTML fragment.</html>", null, PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
 
 		// use basepath in an HTML string
-		pdf.addHtml("<html><p style='color:red;font-family:verdana;font-size:30px'>HTML with basePath.</p><img src='./images/logo.png'></img></html>",
+		pdf.AddHtml("<html><p style='color:red;font-family:verdana;font-size:30px'>HTML with basePath.</p><img src='./images/logo.png'></img></html>",
 				"https://www.dynamicpdf.com", PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
 
 		// add html from a path on local drive
@@ -270,7 +270,7 @@ public class InstructionsExamples {
 		}
 
 		HtmlResource resource = new HtmlResource(temp);
-		pdf.addHtml(resource, null, PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
+		pdf.AddHtml(resource, null, PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
 		
 		return pdf;
 	}

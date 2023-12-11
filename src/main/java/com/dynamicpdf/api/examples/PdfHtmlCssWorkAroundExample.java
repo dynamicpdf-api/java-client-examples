@@ -12,6 +12,7 @@ import com.dynamicpdf.api.PageOrientation;
 import com.dynamicpdf.api.PageSize;
 import com.dynamicpdf.api.Pdf;
 import com.dynamicpdf.api.PdfResponse;
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.HtmlResource;
 
 public class PdfHtmlCssWorkAroundExample {
@@ -53,8 +54,7 @@ public class PdfHtmlCssWorkAroundExample {
 	}
 
 	public static void main(String[] args) {
-		PdfHtmlCssWorkAroundExample.Run("DP.xxx-api-key-xxx", 
-				"C:/temp/users-guide-resources/", "c:/temp/dynamicpdf-api-usersguide-examples/java-output/");
+		PdfHtmlCssWorkAroundExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.USERS_GUIDE_RESOURCE_PATH, DynamicPdfCloudApiExamples.OUTPUT_PATH + "/users-guide-output/");
 	}
 
 }

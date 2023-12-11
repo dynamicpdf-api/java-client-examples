@@ -1,5 +1,6 @@
 package com.dynamicpdf.api.examples;
 
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.PdfResource;
 import com.dynamicpdf.api.PdfXmp;
 import com.dynamicpdf.api.XmlResponse;
@@ -9,8 +10,7 @@ public class GetXmpMetaData {
 	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-xmp/tutorial-pdf-xmp
 
 	public static void main(String[] args) {
-		GetXmpMetaData.Run("DP.xxx-api-key-xxx",
-				"C:/temp/dynamicpdf-api-samples/get-xmp-metadata/");
+		GetXmpMetaData.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/get-xmp-metadata-pdf-xmp-endpoint/");
 	}
 
 	public static void Run(String apiKey, String basePath) {

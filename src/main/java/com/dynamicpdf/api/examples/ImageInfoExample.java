@@ -1,5 +1,6 @@
 package com.dynamicpdf.api.examples;
 
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.ImageInfo;
 import com.dynamicpdf.api.ImageResource;
 import com.dynamicpdf.api.ImageResponse;
@@ -8,6 +9,12 @@ import com.dynamicpdf.api.util.PrettyPrintUtility;
 
 public class ImageInfoExample {
 
+	
+	public static void Run(String key, String basePath) {
+		ImageInfoExample.RunOne(key, basePath);
+		ImageInfoExample.RunTwo(key, basePath);
+	}
+	
 	public static void RunOne(String key, String basePath) {
         ImageResource imageResource = null;
         imageResource = new ImageResource(basePath + "getting-started.png");
@@ -28,9 +35,6 @@ public class ImageInfoExample {
     }
 	
 	public static void main(String[] args) {
-		ImageInfoExample.RunOne("DP.xxx-api-key-xxx",
-				"C:/temp/dynamicpdf-api-usersguide-examples/");
-		ImageInfoExample.RunTwo("DP.xxx-api-key-xxx",
-				"C:/temp/dynamicpdf-api-usersguide-examples/");
+		ImageInfoExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/image-info/");
 	}
 }

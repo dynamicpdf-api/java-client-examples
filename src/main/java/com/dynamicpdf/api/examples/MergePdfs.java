@@ -3,6 +3,8 @@ package com.dynamicpdf.api.examples;
 import java.io.File;
 import java.io.IOException;
 import org.apache.commons.io.FileUtils;
+
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.Pdf;
 import com.dynamicpdf.api.PdfInput;
 import com.dynamicpdf.api.PdfResource;
@@ -14,8 +16,7 @@ public class MergePdfs {
 	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-tutorial-merging-pdfs
 
 	public static void main(String[] args) {
-		MergePdfs.Run("DP.xxx-api-key-xxx",
-				"C:/temp/dynamicpdf-api-samples/");
+		MergePdfs.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/merge-pdfs-pdf-endpoint/");
 	}
 
 	public static void Run(String apiKey, String basePath) {

@@ -7,13 +7,14 @@ import java.util.concurrent.CompletableFuture;
 import org.apache.commons.io.FileUtils;
 
 import com.dynamicpdf.api.DlexLayout;
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.LayoutDataResource;
 import com.dynamicpdf.api.PdfResponse;
 
 public class AsyncExample {
 
 	public static void main(String[] args) {
-		 Run("DP.xxx-api-key-xxx", "c:/temp/dynamicpdf-api-samples/async-example/");
+	   	AsyncExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/async-example/");
 	}
 
 	public static void Run(String apiKey, String basePath) {

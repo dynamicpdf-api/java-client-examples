@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.LayoutDataResource;
 import com.dynamicpdf.api.Pdf;
 import com.dynamicpdf.api.PdfResponse;
@@ -14,8 +15,7 @@ public class CreatePdfDlex {
 	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-tutorial-dlex-pdf-endpoint
 
 	public static void main(String[] args) {
-		CreatePdfDlex.Run("DP.xxx-api-key-xxx",
-				"C:/temp/dynamicpdf-api-samples/create-pdf-dlex/");
+		CreatePdfDlex.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/creating-pdf-pdf-endpoint/");
 	}
 
     public static void Run(String apiKey, String basePath)

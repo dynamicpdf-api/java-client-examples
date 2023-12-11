@@ -1,5 +1,6 @@
 package com.dynamicpdf.api.examples;
 
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.PdfInfo;
 import com.dynamicpdf.api.PdfInfoResponse;
 import com.dynamicpdf.api.PdfResource;
@@ -9,8 +10,7 @@ public class GetPdfInfo {
 	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-info/tutorial-pdf-info
 	
 	public static void main(String[] args) {
-		GetPdfInfo.Run("DP.xxx-api-key-xxx",
-				"C:/temp/dynamicpdf-api-samples/get-pdf-info/");
+		GetPdfInfo.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/get-pdf-info-pdf-info-endpoint/");
 
 	}
 

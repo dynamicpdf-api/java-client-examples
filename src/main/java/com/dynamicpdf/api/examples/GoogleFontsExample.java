@@ -3,6 +3,8 @@ package com.dynamicpdf.api.examples;
 import java.io.File;
 import java.io.IOException;
 import org.apache.commons.io.FileUtils;
+
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.Font;
 import com.dynamicpdf.api.PageInput;
 import com.dynamicpdf.api.Pdf;
@@ -41,8 +43,7 @@ public class GoogleFontsExample {
     }
     
 	public static void main(String[] args) {
-		GoogleFontsExample.Run("DP.xxx-api-key-xxx",
-				"C:/temp/dynamicpdf-api-usersguide-examples/");
+		GoogleFontsExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/google-fonts/");
 	}
 
 }

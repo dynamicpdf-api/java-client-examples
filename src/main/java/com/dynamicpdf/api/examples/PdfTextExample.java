@@ -1,5 +1,6 @@
 package com.dynamicpdf.api.examples;
 
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.PdfResource;
 import com.dynamicpdf.api.PdfText;
 import com.dynamicpdf.api.PdfTextResponse;
@@ -19,7 +20,6 @@ public class PdfTextExample {
     }
     
 	public static void main(String[] args) {
-		PdfTextExample.Run("DP.xxx-api-key-xxx",
-				"C:/temp/dynamicpdf-api-usersguide-examples/");
+		PdfTextExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/extract-text-pdf-text-endpoint/");
 	}
 }

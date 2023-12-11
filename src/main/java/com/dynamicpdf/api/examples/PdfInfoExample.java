@@ -1,5 +1,6 @@
 package com.dynamicpdf.api.examples;
 
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.PdfInfo;
 import com.dynamicpdf.api.PdfInfoResponse;
 import com.dynamicpdf.api.PdfResource;
@@ -8,7 +9,7 @@ import com.dynamicpdf.api.util.PrettyPrintUtility;
 public class PdfInfoExample {
 
 	public static void Run(String key, String basePath) {
-		PdfResource resource = new PdfResource(basePath + "DocumentA.pdf");
+		PdfResource resource = new PdfResource(basePath + "fw4.pdf");
         PdfInfo pdfInfo = new PdfInfo(resource);
         pdfInfo.setApiKey(key);
         PdfInfoResponse response = pdfInfo.process();
@@ -16,8 +17,7 @@ public class PdfInfoExample {
 	} 
 	
 	public static void main(String[] args) {
-		PdfInfoExample.Run("DP.xxx-api-key-xxx",
-				"C:/temp/dynamicpdf-api-usersguide-examples/");
+		PdfInfoExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/pdf-info/");
 	}
 
 }

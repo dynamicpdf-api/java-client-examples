@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.FormField;
 import com.dynamicpdf.api.Pdf;
 import com.dynamicpdf.api.PdfResponse;
@@ -12,7 +13,7 @@ import com.dynamicpdf.api.PdfResponse;
 public class CompletingAcroForm {
 
 	public static void main(String[] args) {
-		CompletingAcroForm.Run("DP.xxx-api-key-xxx", "c:/temp/dynamicpdf-api-samples/fill-acro-form/");
+		CompletingAcroForm.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/fill-acro-form-pdf-endpoint/");
 	}
 	
 	public static void Run(String apiKey, String basePath) {

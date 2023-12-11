@@ -8,17 +8,18 @@ import java.nio.file.Paths;
 import org.apache.commons.io.FileUtils;
 
 import com.dynamicpdf.api.DlexLayout;
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.LayoutDataResource;
 import com.dynamicpdf.api.PdfResponse;
 
 public class DlexLayoutExampleString {
 
-	public static void CreatePDF(String apiKey, String basePath) {
+	public static void Run(String apiKey, String basePath) {
 
 		String jsonData = null;
 
 		try {
-			jsonData = Files.readString(Paths.get(basePath + "/SimpleReportWithCoverPage.json"));
+			jsonData = new String(Files.readAllBytes(Paths.get(basePath + "/SimpleReportWithCoverPage.json")));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -41,6 +42,6 @@ public class DlexLayoutExampleString {
 	}
 
 	public static void main(String[] args) {
-		DlexLayoutExampleString.CreatePDF("DP.xxx-api-key-xxx", "c:/temp/dlex-layout-example");
+		DlexLayoutExampleString.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/dlex-layout/");
 	}
 }

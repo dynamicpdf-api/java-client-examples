@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import org.apache.commons.io.FileUtils;
 
 import com.dynamicpdf.api.DlexLayout;
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.LayoutDataResource;
 import com.dynamicpdf.api.PdfResponse;
 import com.dynamicpdf.api.examples.reportobjects.SimpleReport;
@@ -15,6 +16,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class DlexLayoutExampleObject {
 
+	public static void Run(String apiKey, String baseDir) {
+		SimpleReport simpleReport = DlexLayoutExampleObject
+				.testJsonParsingAndReturnObject(baseDir);
+		DlexLayoutExampleObject.CreatePDF(apiKey, baseDir, simpleReport);
+	}
+	
 	public static void CreatePDF(String apiKey, String basePath, SimpleReport simpleReport) {
 
 		LayoutDataResource layoutData = new LayoutDataResource(simpleReport);
@@ -33,11 +40,9 @@ public class DlexLayoutExampleObject {
 			System.out.println(response.getErrorJson());
 		}
 	}
-
+	
 	public static void main(String[] args) {
-		SimpleReport simpleReport = DlexLayoutExampleObject
-				.testJsonParsingAndReturnObject("c:/temp/dlex-layout-example");
-		DlexLayoutExampleObject.CreatePDF("DP.xxx-api-key-xxx", "c:/temp/dlex-layout-example", simpleReport);
+		DlexLayoutExampleObject.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/dlex-layout/");
 	}
 
 	public static SimpleReport testJsonParsingAndReturnObject(String basePath) {

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import com.dynamicpdf.api.DlexLayout;
+import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.LayoutDataResource;
 import com.dynamicpdf.api.PdfResponse;
 
@@ -12,8 +13,7 @@ public class GettingStartedInFive {
 	// https://cloud.dynamicpdf.com/docs/getting-started
 
 	public static void main(String[] args) {
-		GettingStartedInFive.Run("DP.xxx-api-key-xxx",
-				"C:/temp/dynamicpdf-api-samples/");
+		GettingStartedInFive.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/getting-started/");
 	}
 
 	public static void Run(String apiKey, String basePath) {
