@@ -99,14 +99,14 @@ To obtain the resources for the project, login to [cloud.dynamicpdf.com](cloud.d
 
 - You need the following samples folder in your Cloud Storage space to run all the examples.
 
-samples/report-with-cover-page
-samples/creating-pdf-pdf-endpoint
-samples/creating-a-report-template-designer
-samples/creating-a-page-template-designer
-samples/dlex-layout
-samples/merge-pdfs-pdf-endpoint
-samples/fill-acro-form-pdf-endpoint
-samples/creating-a-page-template-designer
+* samples/report-with-cover-page
+* samples/creating-pdf-pdf-endpoint
+* samples/creating-a-report-template-designer
+* samples/creating-a-page-template-designer
+* samples/dlex-layout
+* samples/merge-pdfs-pdf-endpoint
+* samples/fill-acro-form-pdf-endpoint
+* samples/creating-a-page-template-designer
 
 ## Tutorials
 
