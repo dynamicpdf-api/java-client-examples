@@ -30,7 +30,7 @@ public class PdfExample {
         pageInput.getElements().add(pageNumberingElement);
         PdfResponse pdfResponse = pdf.process();
         try {
-			FileUtils.writeByteArrayToFile(new File(basePath + "java-pdf-page-example-output.pdf"), pdfResponse.getContent());
+			FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/java-pdf-page-example-output.pdf"), pdfResponse.getContent());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

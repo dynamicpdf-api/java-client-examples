@@ -46,7 +46,7 @@ public class PdfHtmlCssWorkAroundExample {
 		PdfResponse pdfResponse = pdf.process();
 
 		try {
-			FileUtils.writeByteArrayToFile(new File(outPath + "java-pdf-html-workaround-example-output.pdf"),
+			FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/java-pdf-html-workaround-example-output.pdf"),
 					pdfResponse.getContent());
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -54,7 +54,7 @@ public class PdfHtmlCssWorkAroundExample {
 	}
 
 	public static void main(String[] args) {
-		PdfHtmlCssWorkAroundExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.USERS_GUIDE_RESOURCE_PATH, DynamicPdfCloudApiExamples.OUTPUT_PATH + "/users-guide-output/");
+		PdfHtmlCssWorkAroundExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR, DynamicPdfCloudApiExamples.OUTPUT_PATH);
 	}
 
 }

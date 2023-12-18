@@ -47,7 +47,7 @@ public class InstructionsExamples {
 			System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.getInstructionsJson()));
 			System.out.println("==================================================================");
 			try {
-				FileUtils.writeByteArrayToFile(new File(basePath + "java-output/" + outputFile), response.getContent());
+				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/" + outputFile), response.getContent());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -55,7 +55,7 @@ public class InstructionsExamples {
 	}
 
 	public static void main(String[] args) {
-		InstructionsExamples.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.USERS_GUIDE_RESOURCE_PATH, DynamicPdfCloudApiExamples.OUTPUT_PATH + "/users-guide-output/");
+		InstructionsExamples.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR, DynamicPdfCloudApiExamples.OUTPUT_PATH);
 	}
 
 	public static void Run(String apiKey, String basePath, String outputPath) {

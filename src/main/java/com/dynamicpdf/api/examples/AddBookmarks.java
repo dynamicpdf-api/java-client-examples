@@ -72,7 +72,7 @@ public class AddBookmarks {
 		if(response.getIsSuccessful())
 		{
 			try {
-				FileUtils.writeByteArrayToFile(new File(basePath + "add-bookmarks-java-output.pdf"),
+				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/add-bookmarks-java-output.pdf"),
 						response.getContent());
 			} catch (IOException e) {
 				e.printStackTrace();

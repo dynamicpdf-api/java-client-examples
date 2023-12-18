@@ -50,7 +50,7 @@ public class AsyncExample {
 		
 		if (response.getIsSuccessful()) {
 			try {
-				FileUtils.writeByteArrayToFile(new File(basePath + "/" + userId + "-output.pdf"), (byte[]) response.getContent());
+				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/" + userId + "-output.pdf"), (byte[]) response.getContent());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

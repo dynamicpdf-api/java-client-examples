@@ -46,7 +46,7 @@ public class CompletingAcroForm {
         
         if(response.getIsSuccessful()) {
         	try {
-				FileUtils.writeByteArrayToFile(new File(basePath + "fill-acro-form-java-output.pdf"), response.getContent());
+				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/fill-acro-form-java-output.pdf"), response.getContent());
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -1,5 +1,6 @@
 package com.dynamicpdf.api;
 
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -34,11 +35,9 @@ import com.dynamicpdf.api.gettingStarted.GettingStartedInFive;
 public class DynamicPdfCloudApiExamples {
 
 	public static String BASE_DIR = "C://temp/dynamicpdf-api-samples";
-	public static String USERS_GUIDE_RESOURCE_PATH = "c:/temp/dynamicpdf-api-samples/users-guide-resources/";
-	public static String OUTPUT_PATH = "c:/temp/dynamicpdf-api-samples";
-	public static String API_KEY = "DP.xxx-api-key-xxx";
-
-    
+	public static String OUTPUT_PATH = "C://temp/dynamicpdf-api-samples/output";
+	public static String API_KEY = "DP---api-key---";
+	
     
     public static void main(String[] args) {
   	
@@ -46,11 +45,10 @@ public class DynamicPdfCloudApiExamples {
     	try {
 			URL resource = DynamicPdfCloudApiExamples.class.getClassLoader().getResource("./resources");
 			String dir = resource.getPath();
-			
 			Path src = Paths.get(resource.toURI());
-			Path dest = Paths.get(DynamicPdfCloudApiExamples.BASE_DIR);
-			
+			Path dest = Paths.get(DynamicPdfCloudApiExamples.BASE_DIR);			
 			CopyFolder(src, dest);
+			Files.createDirectories(Paths.get(OUTPUT_PATH));
 		} catch (Exception e) {
 			e.printStackTrace();
 			return;
@@ -76,11 +74,11 @@ public class DynamicPdfCloudApiExamples {
     	ImageInfoExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/image-info/");
     	MergePdfs.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/merge-pdfs-pdf-endpoint/");
     	PdfExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/pdf-example/");
-    	PdfHtmlCssWorkAroundExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.USERS_GUIDE_RESOURCE_PATH, DynamicPdfCloudApiExamples.OUTPUT_PATH + "/users-guide-output/");
+    	PdfHtmlCssWorkAroundExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/users-guide/", DynamicPdfCloudApiExamples.OUTPUT_PATH);
     	PdfInfoExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/pdf-info/");
     	PdfTextExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/extract-text-pdf-text-endpoint/");
     	PdfXmpExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/get-xmp-metadata-pdf-xmp-endpoint/");
-    	InstructionsExamples.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.USERS_GUIDE_RESOURCE_PATH, DynamicPdfCloudApiExamples.OUTPUT_PATH + "/users-guide-output/");
+    	InstructionsExamples.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/users-guide/", DynamicPdfCloudApiExamples.OUTPUT_PATH);
     	
     	System.out.println("======= finished running examples ====");
     	

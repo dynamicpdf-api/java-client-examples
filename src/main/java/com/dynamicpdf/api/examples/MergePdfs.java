@@ -49,7 +49,7 @@ public class MergePdfs {
 
 		if (pdfResponse.getIsSuccessful()) {
 			try {
-				FileUtils.writeByteArrayToFile(new File(basePath + "merge-pdfs-java-output.pdf"), 
+				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/merge-pdfs-java-output.pdf"), 
 						pdfResponse.getContent());
 			} catch (IOException e) {
 				e.printStackTrace();

@@ -28,7 +28,7 @@ public class DesignerReportTemplate {
 			if(response.getIsSuccessful())
 			{
 				try {
-					FileUtils.writeByteArrayToFile(new File(basePath + "invoice-java-output.pdf"),
+					FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/invoice-java-output.pdf"),
 							response.getContent());
 				} catch (IOException e) {
 					e.printStackTrace();

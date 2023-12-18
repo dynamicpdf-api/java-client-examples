@@ -34,7 +34,7 @@ public class CreatingPdfDlexLayout {
 		//if successful save as file
 		if (response.getIsSuccessful()) {
 			try {
-				FileUtils.writeByteArrayToFile(new File(basePath + "creating-pdf-dlex-layout-java-output.pdf"),
+				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/creating-pdf-dlex-layout-java-output.pdf"),
 						(byte[]) response.getContent());
 			} catch (IOException e) {
 				e.printStackTrace();

@@ -31,7 +31,7 @@ public class DlexLayoutExampleObject {
 
 		if (response.getIsSuccessful() == true) {
 			try {
-				FileUtils.writeByteArrayToFile(new File(basePath + "/java-dlex-object-output.pdf"),
+				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/java-dlex-object-output.pdf"),
 						(byte[]) response.getContent());
 			} catch (IOException e) {
 				e.printStackTrace();
