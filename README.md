@@ -108,6 +108,8 @@ You need the following samples folder in your Cloud Storage space to run all the
 * samples/fill-acro-form-pdf-endpoint
 * samples/creating-a-page-template-designer
 
+The local files are in the resources folder and when run are copied to c:/temp/dynamicpdf-cloud-api-samples folder.
+
 ## Tutorials
 
 The following table lists the available tutorials.
