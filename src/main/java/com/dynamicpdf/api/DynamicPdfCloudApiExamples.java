@@ -36,7 +36,7 @@ public class DynamicPdfCloudApiExamples {
 
 	public static String BASE_DIR = "C://temp/dynamicpdf-api-samples";
 	public static String OUTPUT_PATH = "C://temp/dynamicpdf-api-samples/output";
-	public static String API_KEY = "DP.J+G1BiQYH7x+3D7uR5jo+Jo0PPKrY0nU1l+j3XbOtobjTqpWSZErUV70";
+	public static String API_KEY = "DP---api-key---";
 	
     
     public static void main(String[] args) {
