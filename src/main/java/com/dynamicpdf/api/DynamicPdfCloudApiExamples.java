@@ -36,7 +36,7 @@ public class DynamicPdfCloudApiExamples {
 
 	public static String BASE_DIR = "C://temp/dynamicpdf-api-samples";
 	public static String OUTPUT_PATH = "C://temp/dynamicpdf-api-samples/output";
-	public static String API_KEY = "DP---api-key---";
+	public static String API_KEY = "DP.J+G1BiQYH7x+3D7uR5jo+Jo0PPKrY0nU1l+j3XbOtobjTqpWSZErUV70";
 	
     
     public static void main(String[] args) {
@@ -63,7 +63,7 @@ public class DynamicPdfCloudApiExamples {
     	CreatePdfDlex.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/creating-pdf-pdf-endpoint/");
     	CreatingPdfDlexLayout.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/dlex-layout/");
     	DesignerReportTemplate.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/creating-a-report-template-designer/");
-    	DlexLayoutExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/getting-started/");
+    	DlexLayoutExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/dlex-layout/");
     	DlexLayoutExampleObject.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/dlex-layout/");
     	DlexLayoutExampleString.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/dlex-layout/");
     	ExtractText.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/extract-text-pdf-text-endpoint/");
