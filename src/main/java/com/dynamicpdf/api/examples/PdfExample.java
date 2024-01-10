@@ -21,6 +21,8 @@ public class PdfExample {
         pdf.setApiKey(apiKey);
         pdf.setAuthor("John Doe");
         pdf.setTitle("My Blank PDF Page");
+        pdf.setCreator("Test Creator");
+        pdf.setTag(false);
         PageInput pageInput = pdf.addPage(1008, 612);
         PageNumberingElement pageNumberingElement = 
             new PageNumberingElement("1", ElementPlacement.TOPRIGHT);

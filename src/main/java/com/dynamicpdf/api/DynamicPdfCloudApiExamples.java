@@ -29,6 +29,7 @@ import com.dynamicpdf.api.examples.PdfInfoExample;
 import com.dynamicpdf.api.examples.PdfTextExample;
 import com.dynamicpdf.api.examples.PdfXmpExample;
 import com.dynamicpdf.api.examples.instructions.InstructionsExamples;
+import com.dynamicpdf.api.examples.solutions.SolutionImagesTextRecs;
 import com.dynamicpdf.api.gettingStarted.GettingStartedInFive;
 
 
@@ -36,7 +37,7 @@ public class DynamicPdfCloudApiExamples {
 
 	public static String BASE_DIR = "C://temp/dynamicpdf-api-samples";
 	public static String OUTPUT_PATH = "C://temp/dynamicpdf-api-samples/output";
-	public static String API_KEY = "DP---api-key---";
+	public static String API_KEY = "DP--api-key--";
 	
     
     public static void main(String[] args) {
@@ -54,7 +55,7 @@ public class DynamicPdfCloudApiExamples {
 			return;
 		}
 
-       	
+    	SolutionImagesTextRecs.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/images-text-recs/");
     	
     	GettingStartedInFive.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/getting-started/");
     	AddBookmarks.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR +"/add-bookmarks/");
