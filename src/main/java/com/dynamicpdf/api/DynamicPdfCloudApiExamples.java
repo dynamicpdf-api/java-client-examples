@@ -1,7 +1,5 @@
 package com.dynamicpdf.api;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -29,20 +27,20 @@ import com.dynamicpdf.api.examples.PdfInfoExample;
 import com.dynamicpdf.api.examples.PdfTextExample;
 import com.dynamicpdf.api.examples.PdfXmpExample;
 import com.dynamicpdf.api.examples.instructions.InstructionsExamples;
+import com.dynamicpdf.api.examples.solutions.PdfBarcode;
 import com.dynamicpdf.api.examples.solutions.SolutionImagesTextRecs;
 import com.dynamicpdf.api.gettingStarted.GettingStartedInFive;
 
 
 public class DynamicPdfCloudApiExamples {
 
-	public static String BASE_DIR = "C://temp/dynamicpdf-api-samples";
-	public static String OUTPUT_PATH = "C://temp/dynamicpdf-api-samples/output";
+	public static String BASE_DIR = "C:/temp/dynamicpdf-api-samples";
+	public static String OUTPUT_PATH = "C:/temp/dynamicpdf-api-samples/output";
 	public static String API_KEY = "DP--api-key--";
 	
     
     public static void main(String[] args) {
   	
-    	
     	try {
 			URL resource = DynamicPdfCloudApiExamples.class.getClassLoader().getResource("./resources");
 			String dir = resource.getPath();
@@ -54,6 +52,8 @@ public class DynamicPdfCloudApiExamples {
 			e.printStackTrace();
 			return;
 		}
+    	
+    	PdfBarcode.Run(DynamicPdfCloudApiExamples.API_KEY);
 
     	SolutionImagesTextRecs.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/images-text-recs/");
     	
