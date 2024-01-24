@@ -27,9 +27,14 @@ public class PdfExample {
         PageNumberingElement pageNumberingElement = 
             new PageNumberingElement("1", ElementPlacement.TOPRIGHT);
         pageNumberingElement.setColor(RgbColor.getRed());
-        pageNumberingElement.setFont(Font.getCourier());
+        
+        pageNumberingElement.setFont(Font.google("Borel", false, false));
         pageNumberingElement.setFontSize(24);
         pageInput.getElements().add(pageNumberingElement);
+        
+        
+        System.out.println(pdf.getInstructionsJson(true));
+        
         PdfResponse pdfResponse = pdf.process();
         try {
 			FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/java-pdf-page-example-output.pdf"), pdfResponse.getContent());
