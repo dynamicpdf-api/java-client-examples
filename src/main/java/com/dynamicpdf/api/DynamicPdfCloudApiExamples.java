@@ -26,6 +26,7 @@ import com.dynamicpdf.api.examples.PdfHtmlCssWorkAroundExample;
 import com.dynamicpdf.api.examples.PdfInfoExample;
 import com.dynamicpdf.api.examples.PdfTextExample;
 import com.dynamicpdf.api.examples.PdfXmpExample;
+import com.dynamicpdf.api.examples.SplitPdf;
 import com.dynamicpdf.api.examples.instructions.InstructionsExamples;
 import com.dynamicpdf.api.examples.solutions.PdfBarcode;
 import com.dynamicpdf.api.examples.solutions.SolutionImagesTextRecs;
@@ -52,6 +53,8 @@ public class DynamicPdfCloudApiExamples {
 			e.printStackTrace();
 			return;
 		}
+    	
+    	SplitPdf.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/split-pdf/");
     	
     	PdfBarcode.Run(DynamicPdfCloudApiExamples.API_KEY);
 
