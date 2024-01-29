@@ -28,6 +28,7 @@ import com.dynamicpdf.api.examples.PdfTextExample;
 import com.dynamicpdf.api.examples.PdfXmpExample;
 import com.dynamicpdf.api.examples.SplitPdf;
 import com.dynamicpdf.api.examples.instructions.InstructionsExamples;
+import com.dynamicpdf.api.examples.solutions.FormFieldFlattenAndRemove;
 import com.dynamicpdf.api.examples.solutions.PdfBarcode;
 import com.dynamicpdf.api.examples.solutions.SolutionImagesTextRecs;
 import com.dynamicpdf.api.gettingStarted.GettingStartedInFive;
@@ -53,6 +54,8 @@ public class DynamicPdfCloudApiExamples {
 			e.printStackTrace();
 			return;
 		}
+    	
+    	FormFieldFlattenAndRemove.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/form-field-flatten/");
     	
     	SplitPdf.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/split-pdf/");
     	
