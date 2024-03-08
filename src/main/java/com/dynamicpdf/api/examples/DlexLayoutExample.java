@@ -27,7 +27,7 @@ public class DlexLayoutExample {
 		  
 		  if (response.getIsSuccessful()==true) {
 		    try {
-		      FileUtils.writeByteArrayToFile(new File(basePath + "java-dlex-layout-output.pdf"), 
+		      FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/java-dlex-layout-output.pdf"), 
 		    		  (byte[])response.getContent());
 		    } catch (IOException e) {
 		      e.printStackTrace();
@@ -48,7 +48,7 @@ public class DlexLayoutExample {
 		  
 		  if (response.getIsSuccessful()==true) {
 		    try {
-		      FileUtils.writeByteArrayToFile(new File(basePath + "java-dlex-layout-local-output.pdf"), 
+		      FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/java-dlex-layout-local-output.pdf"), 
 		    		  (byte[])response.getContent());
 		    } catch (IOException e) {
 		      e.printStackTrace();

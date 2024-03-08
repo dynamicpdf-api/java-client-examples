@@ -1,10 +1,5 @@
 package com.dynamicpdf.api;
 
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import com.dynamicpdf.api.examples.AddBookmarks;
 import com.dynamicpdf.api.examples.AsyncExample;
 import com.dynamicpdf.api.examples.CompletingAcroForm;
@@ -36,24 +31,12 @@ import com.dynamicpdf.api.gettingStarted.GettingStartedInFive;
 
 public class DynamicPdfCloudApiExamples {
 
-	public static String BASE_DIR = "C:/temp/dynamicpdf-api-samples";
-	public static String OUTPUT_PATH = "C:/temp/dynamicpdf-api-samples/output";
+	public static String BASE_DIR = "./src/main/resources";
+	public static String OUTPUT_PATH = "./output";
 	public static String API_KEY = "DP--api-key--";
 	
     
     public static void main(String[] args) {
-  	
-    	try {
-			URL resource = DynamicPdfCloudApiExamples.class.getClassLoader().getResource("./resources");
-			String dir = resource.getPath();
-			Path src = Paths.get(resource.toURI());
-			Path dest = Paths.get(DynamicPdfCloudApiExamples.BASE_DIR);			
-			CopyFolder(src, dest);
-			Files.createDirectories(Paths.get(OUTPUT_PATH));
-		} catch (Exception e) {
-			e.printStackTrace();
-			return;
-		}
     	
     	FormFieldFlattenAndRemove.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/form-field-flatten/");
     	
@@ -90,30 +73,4 @@ public class DynamicPdfCloudApiExamples {
     	System.out.println("======= finished running examples ====");
     	
 	}
-    
-    
-	private static void CopyFolder(Path src, Path dest) throws Exception {
-	    try {
-	    	
-	    	if(Files.exists(dest)) return;
-	    	
-	        Files.walk( src ).forEach( s -> {
-	            try {
-	                Path d = dest.resolve( src.relativize(s) );
-	                if( Files.isDirectory( s ) ) {
-	                    if( !Files.exists( d ) )
-	                        Files.createDirectory( d );
-	                    return;
-	                }
-	                Files.copy( s, d );
-	            } catch( Exception e ) {
-	                e.printStackTrace();
-	            }
-	        });
-	    } catch( Exception ex ) {
-	        ex.printStackTrace();
-	        throw ex;
-	    }
-	}
-
 }

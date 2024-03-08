@@ -23,7 +23,7 @@ public class GettingStartedInFive {
 		PdfResponse pdfResponse = dlexLayout.process();
 
 		try {
-			FileUtils.writeByteArrayToFile(new File(basePath + "getting-started-java-output.pdf"),
+			FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/getting-started-java-output.pdf"),
 					pdfResponse.getContent());
 		} catch (IOException e) {
 			e.printStackTrace();

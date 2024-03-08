@@ -140,7 +140,7 @@ public class InstructionsExamples {
 		pdf.addPdf(resource);
 
 		// get pdf from cloud storage
-		pdf.addPdf("samples/users-guide-resources/DocumentC.pdf");
+		pdf.addPdf("DocumentC.pdf");
 		return pdf;
 
 	}
@@ -178,7 +178,7 @@ public class InstructionsExamples {
 		}
 		pdf.addImage(ir2);
 		// get image from cloud storage
-		pdf.addImage("samples/users-guide-resources/C.png");
+		pdf.addImage("C.png");
 		return pdf;
 	}
 
@@ -204,7 +204,7 @@ public class InstructionsExamples {
 		}
 
 		LayoutDataResource layoutData2 = new LayoutDataResource(jsonData);
-		pdf.addDlex("samples/users-guide-resources/SimpleReportWithCoverPage.dlex", layoutData2);
+		pdf.addDlex("SimpleReportWithCoverPage.dlex", layoutData2);
 
 		return pdf;
 	}
@@ -240,7 +240,7 @@ public class InstructionsExamples {
 			}
 
 			LayoutDataResource layoutData = new LayoutDataResource(jsonText);
-			pdf.addDlex("samples/users-guide-resources/SimpleReportWithCoverPage.dlex", layoutData);
+			pdf.addDlex("SimpleReportWithCoverPage.dlex", layoutData);
 
 		} catch (Exception e1) {
 			e1.printStackTrace();
@@ -254,10 +254,10 @@ public class InstructionsExamples {
 		
 		Pdf pdf = new Pdf();
 
-		pdf.AddHtml("<html>An example HTML fragment.</html>", null, PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
+		pdf.addHtml("<html>An example HTML fragment.</html>", null, PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
 
 		// use basepath in an HTML string
-		pdf.AddHtml("<html><p style='color:red;font-family:verdana;font-size:30px'>HTML with basePath.</p><img src='./images/logo.png'></img></html>",
+		pdf.addHtml("<html><p style='color:red;font-family:verdana;font-size:30px'>HTML with basePath.</p><img src='./images/logo.png'></img></html>",
 				"https://www.dynamicpdf.com", PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
 
 		// add html from a path on local drive
@@ -270,7 +270,7 @@ public class InstructionsExamples {
 		}
 
 		HtmlResource resource = new HtmlResource(temp);
-		pdf.AddHtml(resource, null, PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
+		pdf.addHtml(resource, null, PageSize.LETTER, PageOrientation.PORTRAIT, 1F);
 		
 		return pdf;
 	}
