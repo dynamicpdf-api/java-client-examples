@@ -13,7 +13,7 @@
 			<dependency>
 				<groupId>com.dynamicpdf.api</groupId>
 				<artifactId>dynamicpdf-api</artifactId>
-				<version>1.6.0</version>
+				<version>1.7.0</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-io</groupId>
@@ -38,20 +38,19 @@
 		</dependency>
 	</dependencies>
 	<build>
-    <plugins>
-        <plugin>
-            <artifactId>maven-resources-plugin</artifactId>
-            <version>2.7</version>
-            <configuration>   
-            </configuration>
-        </plugin>
-    </plugins> 
-    <resources>
-        <resource>
-            <directory>${basedir}/src/main/resources</directory>
-            <targetPath>${basedir}/target/classes/resources</targetPath>
-            <filtering>false</filtering>
-        </resource>
-    </resources>  
-</build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.7</version>
+				<configuration></configuration>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+				<targetPath>${basedir}/target/classes/resources</targetPath>
+				<filtering>false</filtering>
+			</resource>
+		</resources>
+	</build>
 </project>
