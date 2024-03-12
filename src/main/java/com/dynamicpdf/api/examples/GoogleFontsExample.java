@@ -36,7 +36,7 @@ public class GoogleFontsExample {
         
         
         try {
-			FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/java-pdf-page-example-output.pdf"), pdfResponse.getContent());
+			FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/java-google-font-output.pdf"), pdfResponse.getContent());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
