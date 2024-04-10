@@ -32,7 +32,7 @@ import com.dynamicpdf.api.gettingStarted.GettingStartedInFive;
 public class DynamicPdfCloudApiExamples {
 
 	public static String BASE_DIR = "./src/main/resources";
-	public static String OUTPUT_PATH = "./output";
+	public static String OUTPUT_PATH = "./src/main/output";
 	public static String API_KEY = "DP--api-key--";
 	
     
