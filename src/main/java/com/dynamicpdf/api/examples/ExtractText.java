@@ -8,8 +8,7 @@ import com.dynamicpdf.api.util.PrettyPrintUtility;
 
 public class ExtractText {
 	
-	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-text/tutorial-pdf-text
-
+	
 	public static void main(String[] args) {
 		ExtractText.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/extract-text-pdf-text-endpoint/");
 
