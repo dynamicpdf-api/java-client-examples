@@ -9,16 +9,42 @@ import com.dynamicpdf.api.DynamicPdfCloudApiExamples;
 import com.dynamicpdf.api.LayoutDataResource;
 import com.dynamicpdf.api.Pdf;
 import com.dynamicpdf.api.PdfResponse;
+import com.dynamicpdf.api.DlexResource;
 
 public class CreatePdfDlex {
 	
-	// https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-tutorial-dlex-pdf-endpoint
-
+	
 	public static void main(String[] args) {
-		CreatePdfDlex.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/creating-pdf-pdf-endpoint/");
+		CreatePdfDlex.RunLocal(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/creating-pdf-pdf-endpoint/");
+		CreatePdfDlex.RunRemote(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/creating-pdf-pdf-endpoint/");
 	}
 
-    public static void Run(String apiKey, String basePath)
+    public static void RunLocal(String apiKey, String basePath)
+    {
+        Pdf pdf = new Pdf();
+        pdf.setApiKey(apiKey);
+        LayoutDataResource layoutDataResource = new LayoutDataResource(basePath + "SimpleReportWithCoverPage.json");
+        DlexResource dlexResource = new DlexResource(basePath + "SimpleReportWithCoverPage.dlex");
+        pdf.addDlex(dlexResource, layoutDataResource);
+        pdf.addAdditionalResource(basePath + "Northwind Logo.gif");
+
+        PdfResponse response = pdf.process();
+
+		if(response.getIsSuccessful())
+		{
+			try {
+				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/create-pdf-dlex-java-local-output.pdf"),
+						response.getContent());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} else
+		{
+			System.out.println(response.getErrorJson());
+		}
+    }
+    
+    public static void RunRemote(String apiKey, String basePath)
     {
         Pdf pdf = new Pdf();
         pdf.setApiKey(apiKey);
@@ -30,7 +56,7 @@ public class CreatePdfDlex {
 		if(response.getIsSuccessful())
 		{
 			try {
-				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/create-pdf-dlex-java-output.pdf"),
+				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/create-pdf-dlex-java-remote-output.pdf"),
 						response.getContent());
 			} catch (IOException e) {
 				e.printStackTrace();

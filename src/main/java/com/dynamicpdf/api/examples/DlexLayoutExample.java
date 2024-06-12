@@ -20,8 +20,8 @@ public class DlexLayoutExample {
 	}
 	
 	public static void RunFromCloud(String apiKey, String basePath) {
-		  LayoutDataResource layoutData = new LayoutDataResource(basePath + "SimpleReportWithCoverPage.json");
-		  DlexLayout dlexEndpoint = new DlexLayout("samples/dlex-layout/SimpleReportWithCoverPage.dlex", layoutData);
+		  LayoutDataResource layoutData = new LayoutDataResource(basePath + "creating-pdf-dlex-layout.json");
+		  DlexLayout dlexEndpoint = new DlexLayout("samples/creating-pdf-dlex-layout-endpoint/creating-pdf-dlex-layout.dlex", layoutData);
 		  dlexEndpoint.setApiKey(apiKey);
 		  PdfResponse response = dlexEndpoint.process();
 		  
@@ -38,10 +38,10 @@ public class DlexLayoutExample {
 		}
 
 	public static void RunFromLocal(String apiKey, String basePath) {
-		  LayoutDataResource layoutData = new LayoutDataResource(basePath + "SimpleReportWithCoverPage.json");
-		  DlexResource dlexResource = new DlexResource(basePath + "SimpleReportWithCoverPage.dlex", "SimpleReportWithCoverPage.dlex");
+		  LayoutDataResource layoutData = new LayoutDataResource(basePath + "creating-pdf-dlex-layout.json");
+		  DlexResource dlexResource = new DlexResource(basePath + "creating-pdf-dlex-layout.dlex", "creating-pdf-dlex-layout.dlex");
 		  DlexLayout dlexEndpoint = new DlexLayout(dlexResource, layoutData);
-		  dlexEndpoint.addAdditionalResource(basePath + "NorthwindLogo.gif", "NorthwindLogo.gif");
+		  dlexEndpoint.addAdditionalResource(basePath + "creating-pdf-dlex-layout.png", "creating-pdf-dlex-layout.png");
 		  
 		  dlexEndpoint.setApiKey(apiKey);
 		  PdfResponse response = dlexEndpoint.process();
@@ -59,6 +59,6 @@ public class DlexLayoutExample {
 		}
 	
 	public static void main(String[] args) {
-		DlexLayoutExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/dlex-layout/");
+		DlexLayoutExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/creating-pdf-dlex-layout/");
 	}
 }
