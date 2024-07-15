@@ -35,9 +35,11 @@ public class ImageConversion {
 		ImageInput imageInput2 = pdf.addImage(imageResource2);
 		imageInput2.setAlign(Align.CENTER);
 		imageInput2.setVAlign(VAlign.CENTER);
-		imageInput2.setExpandToFit(true);
+		imageInput2.setExpandToFit(false);
 		imageInput2.setPageHeight(612);
 		imageInput2.setPageWidth(1008);
+		imageInput2.setScaleX((float).5);
+		imageInput2.setScaleY((float).5);
 
 
 		pdf.setApiKey(apiKey);
@@ -47,7 +49,7 @@ public class ImageConversion {
 		if(response.getIsSuccessful())
 		{
 			try {
-				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/images-convert-pdf-output.pdf"),
+				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/images-convert-pdf-java-output.pdf"),
 						response.getContent());
 			} catch (IOException e) {
 				e.printStackTrace();

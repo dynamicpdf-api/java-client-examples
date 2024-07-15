@@ -17,6 +17,7 @@ import com.dynamicpdf.api.elements.ImageElement;
 import com.dynamicpdf.api.elements.LineElement;
 import com.dynamicpdf.api.elements.RectangleElement;
 import com.dynamicpdf.api.elements.TextElement;
+import com.dynamicpdf.api.util.PrettyPrintUtility;
 
 public class SolutionImagesTextRecs {
 
@@ -30,8 +31,7 @@ public class SolutionImagesTextRecs {
 		pdf.setApiKey(apiKey);
 
 		PageInput pageInput = pdf.addPage(1008, 612);
-		pdf.getInputs().add(pageInput);
-
+		
 		TextElement textElement = new TextElement("Hello PDF", ElementPlacement.TOPCENTER, 50, 100);
 		textElement.setColor(RgbColor.getBlue());
 		textElement.setFontSize(42);
@@ -69,12 +69,15 @@ public class SolutionImagesTextRecs {
 		imageElement.setYOffset(75);
 		pageInput.getElements().add(imageElement);
 		
+		
+		System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.getInstructionsJson()));
+		
 		PdfResponse response = pdf.process();
 		
 		if(response.getIsSuccessful())
 		{
 			try {
-				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/images-text-rec-pdf-output.pdf"),
+				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/images-text-rec-java-pdf-output.pdf"),
 						response.getContent());
 			} catch (IOException e) {
 				e.printStackTrace();
