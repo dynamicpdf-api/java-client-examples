@@ -41,12 +41,10 @@ public class SolutionImagesTextRecs {
 
 		pageInput.getElements().add(textElement);
 		
-		LineElement element = new LineElement(ElementPlacement.TOPLEFT, 200, 200);
+		LineElement element = new LineElement(ElementPlacement.TOPLEFT, 900, 150);
 		element.setColor(RgbColor.getRed());
 		element.setXOffset(305);
 		element.setYOffset(150);
-		element.setX2Offset(900);
-		element.setY2Offset(150);
 		element.setLineStyle(LineStyle.getSolid());
 		element.setWidth(4);
 		pageInput.getElements().add(element);
