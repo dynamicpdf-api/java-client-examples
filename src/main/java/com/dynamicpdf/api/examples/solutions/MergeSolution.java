@@ -22,10 +22,10 @@ import com.dynamicpdf.api.HtmlResource;
 public class MergeSolution {
 
 	public static void main(String[] args) {
-		MergeSolution.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR, DynamicPdfCloudApiExamples.OUTPUT_PATH);
+		MergeSolution.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR);
 	}
 
-	public static void Run(String apiKey, String basePath, String outputPath) {
+	public static void Run(String apiKey, String basePath) {
 		Pdf pdf = new Pdf();
 		pdf.setApiKey(apiKey);
 
