@@ -44,8 +44,8 @@ public class InstructionsExamples {
 		if (response.getErrorJson() != null) {
 			System.out.println(PrettyPrintUtility.prettyPrintJSON(response.getErrorJson()));
 		} else {
-			System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.getInstructionsJson()));
-			System.out.println("==================================================================");
+			//System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.getInstructionsJson()));
+			//System.out.println("==================================================================");
 			try {
 				FileUtils.writeByteArrayToFile(new File(DynamicPdfCloudApiExamples.OUTPUT_PATH + "/" + outputFile), response.getContent());
 			} catch (IOException e) {
@@ -129,19 +129,19 @@ public class InstructionsExamples {
 		Pdf pdf = new Pdf();
 
 		// get pdf from local file system
-		pdf.addPdf(new PdfResource(basePath + "DocumentA.pdf"));
+		pdf.addPdf(new PdfResource(basePath + "/users-guide/DocumentA.pdf"));
 
 		// get pdf from bytes
 		PdfResource resource = null;
 		try {
-			resource = new PdfResource(Files.readAllBytes(Paths.get(basePath + "DocumentB.pdf")));
+			resource = new PdfResource(Files.readAllBytes(Paths.get(basePath + "/users-guide/DocumentB.pdf")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		pdf.addPdf(resource);
 
 		// get pdf from cloud storage
-		pdf.addPdf("DocumentC.pdf");
+		pdf.addPdf("samples/merge-pdfs-pdf-endpoint/DocumentC.pdf");
 		return pdf;
 
 	}
@@ -167,19 +167,19 @@ public class InstructionsExamples {
 
 		Pdf pdf = new Pdf();
 		// get image from local system
-		ImageResource ir = new ImageResource(basePath + "A.png");
+		ImageResource ir = new ImageResource(basePath + "/users-guide/A.png");
 		pdf.addImage(ir);
 
 		// get Image as binary from local system
 		ImageResource ir2 = null;
 		try {
-			ir2 = new ImageResource(Files.readAllBytes(Paths.get(basePath + "B.png")));
+			ir2 = new ImageResource(Files.readAllBytes(Paths.get(basePath + "/users-guide/B.png")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		pdf.addImage(ir2);
 		// get image from cloud storage
-		pdf.addImage("C.png");
+		pdf.addImage("samples/get-image-info-image-info-endpoint/dynamicpdfLogo.png");
 		return pdf;
 	}
 
@@ -189,23 +189,23 @@ public class InstructionsExamples {
 
 		// create pdf using local dlex and embedded image
 
-		LayoutDataResource layoutDataResource = new LayoutDataResource(basePath + "SimpleReportWithCoverPage.json");
-		DlexResource dlexResource = new DlexResource(basePath + "SimpleReportWithCoverPage.dlex");
+		LayoutDataResource layoutDataResource = new LayoutDataResource(basePath + "/creating-pdf-pdf-endpoint/SimpleReportWithCoverPage.json");
+		DlexResource dlexResource = new DlexResource(basePath + "/creating-pdf-pdf-endpoint/SimpleReportWithCoverPage.dlex");
 		pdf.addDlex(dlexResource, layoutDataResource);
-		pdf.addAdditionalResource(basePath + "/NorthwindLogo.gif");
+		pdf.addAdditionalResource(basePath + "/creating-pdf-pdf-endpoint/Northwind Logo.gif");
 
 		/// create pdf using cloud storage dlex and binary JSON data
 
 		String jsonData = null;
 
 		try {
-			jsonData = Files.readString(Paths.get(basePath + "SimpleReportWithCoverPage.json"));
+			jsonData = Files.readString(Paths.get(basePath + "/creating-pdf-pdf-endpoint/SimpleReportWithCoverPage.json"));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
 
 		LayoutDataResource layoutData2 = new LayoutDataResource(jsonData);
-		pdf.addDlex("SimpleReportWithCoverPage.dlex", layoutData2);
+		pdf.addDlex("samples/creating-pdf-pdf-endpoint/SimpleReportWithCoverPage.dlex", layoutData2);
 
 		return pdf;
 	}
@@ -219,7 +219,7 @@ public class InstructionsExamples {
 
 		try {
 
-			jsonText = Files.readString(Paths.get(basePath + "/SimpleReportWithCoverPage.json"));
+			jsonText = Files.readString(Paths.get(basePath + "/users-guide/SimpleReportWithCoverPage.json"));
 
 			// ObjectMapper instantiation
 			ObjectMapper objectMapper = new ObjectMapper();
@@ -235,13 +235,13 @@ public class InstructionsExamples {
 			jsonText = basicMapper.writeValueAsString(simpleReport);
 
 			try {
-				jsonText = Files.readString(Paths.get(basePath + "SimpleReportWithCoverPage.json"));
+				jsonText = Files.readString(Paths.get(basePath + "/users-guide/SimpleReportWithCoverPage.json"));
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
 
 			LayoutDataResource layoutData = new LayoutDataResource(jsonText);
-			pdf.addDlex("SimpleReportWithCoverPage.dlex", layoutData);
+			pdf.addDlex("samples/creating-pdf-pdf-endpoint/SimpleReportWithCoverPage.dlex", layoutData);
 
 		} catch (Exception e1) {
 			e1.printStackTrace();
@@ -265,7 +265,7 @@ public class InstructionsExamples {
 		String temp = null;
 		
 		try {
-			temp = Files.readString(Paths.get(basePath + "products.html"));
+			temp = Files.readString(Paths.get(basePath + "/users-guide/products.html"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -305,14 +305,12 @@ public class InstructionsExamples {
 		pageNumberingElement.setFont(Font.getHelvetica());
 		pageNumberingElement.setFontSize(42);
 
-		String cloudResourceName = "old_samples/shared/font/Calibri.otf";
-
+		
 		PageNumberingElement pageNumberingElementTwo = new PageNumberingElement("B", ElementPlacement.TOPLEFT);
 		pageNumberingElementTwo.setColor(RgbColor.getDarkOrange());
-		pageNumberingElementTwo.setFont(new Font(cloudResourceName));
 		pageNumberingElementTwo.setFontSize(32);
 
-		String filePathFont = basePath + "cnr.otf";
+		String filePathFont = basePath + "/users-guide/cnr.otf";
 		PageNumberingElement pageNumberingElementThree = new PageNumberingElement("C", ElementPlacement.TOPCENTER);
 		pageNumberingElementThree.setColor(RgbColor.getGreen());
 		pageNumberingElementThree.setFont(Font.fromFile(filePathFont));
@@ -326,7 +324,7 @@ public class InstructionsExamples {
 	}
 
 	public static Pdf SecurityExample(String basePath) {
-		String fileResource = basePath + "DocumentB.pdf";
+		String fileResource = basePath + "/users-guide/DocumentB.pdf";
 		String userName = "myuser";
 		String passWord = "mypassword";
 		Pdf pdf = new Pdf();
@@ -341,9 +339,9 @@ public class InstructionsExamples {
 
 	public static Pdf MergeExample(String basePath) {
 		Pdf pdf = new Pdf();
-		PdfResource resourceA = new PdfResource(basePath + "DocumentA.pdf");
-		ImageResource imageResource = new ImageResource(basePath + "DPDFLogo.png");
-		PdfResource resourceB = new PdfResource(basePath + "DocumentB.pdf");
+		PdfResource resourceA = new PdfResource(basePath + "/users-guide/DocumentA.pdf");
+		ImageResource imageResource = new ImageResource(basePath + "/users-guide/DPDFLogo.png");
+		PdfResource resourceB = new PdfResource(basePath + "/users-guide/DocumentB.pdf");
 		pdf.addPdf(resourceA);
 		pdf.addImage(imageResource);
 		pdf.addPdf(resourceB);
@@ -352,7 +350,7 @@ public class InstructionsExamples {
 
 	public static Pdf FormFieldsExample(String basePath) {
 		Pdf pdf = new Pdf();
-		pdf.addPdf(new PdfResource(basePath + "simple-form-fill.pdf"));
+		pdf.addPdf(new PdfResource(basePath + "/users-guide/simple-form-fill.pdf"));
 		FormField formField = new FormField("nameField", "DynamicPdf");
 		FormField formField2 = new FormField("descriptionField", "RealTime Pdf's. Real FAST!");
 		pdf.getFormFields().add(formField);
@@ -388,12 +386,12 @@ public class InstructionsExamples {
 	public static Pdf AddOutlinesExistingPdf(String basePath) {
 
 		Pdf pdf = new Pdf();
-		PdfResource resource = new PdfResource(basePath + "AllPageElements.pdf");
+		PdfResource resource = new PdfResource(basePath + "/users-guide/AllPageElements.pdf");
 		PdfInput input = pdf.addPdf(resource);
 		input.setId("AllPageElements");
 		pdf.getInputs().add(input);
 
-		PdfResource resource1 = new PdfResource(basePath + "OutlineExisting.pdf");
+		PdfResource resource1 = new PdfResource(basePath + "/users-guide/OutlineExisting.pdf");
 		PdfInput input1 = pdf.addPdf(resource1);
 		input1.setId("outlineDoc1");
 		pdf.getInputs().add(input1);
@@ -409,7 +407,7 @@ public class InstructionsExamples {
 		Pdf pdf = new Pdf();
 		pdf.setAuthor("John User");
 		pdf.setTitle("Template Example");
-		PdfResource resource = new PdfResource(basePath + "DocumentA.pdf");
+		PdfResource resource = new PdfResource(basePath + "/users-guide/DocumentA.pdf");
 		PdfInput input = new PdfInput(resource);
 		pdf.getInputs().add(input);
 
@@ -426,7 +424,7 @@ public class InstructionsExamples {
 		pdf.setAuthor("John Doe");
 		pdf.setTitle("Barcode Example");
 
-		PdfResource resource = new PdfResource(basePath + "DocumentA.pdf");
+		PdfResource resource = new PdfResource(basePath + "/users-guide/DocumentA.pdf");
 		PdfInput input = new PdfInput(resource);
 		pdf.getInputs().add(input);
 

@@ -91,6 +91,9 @@ The examples project contains a sample Maven POM file for building the project.
 
 * When first running any of the examples, be certain to first build the project using Maven so that your IDE pulls in all necessary dependencies. You can then run the examples for each tutorial independently from the command line.
 
+## Running
+Each example is designed to be run standalone.  However, you can run all the examples at once by Running the `DynamicPdfCloudApiExamples` class in `DynamicPDFCloudApiExamples.java` file.
+
 ## Resources
 
 To obtain the resources for the project, login to [cloud.dynamicpdf.com](cloud.dynamicpdf.com) (assuming you have an account), and go to the **Resource Manager**. Use the `samples` folder to add the resources for the tutorial or example.  Resources for Users Guide sample code is available in the `users-guide-resources` project.
@@ -107,8 +110,11 @@ You need the following samples folder in your Cloud Storage space to run all the
 * samples/merge-pdfs-pdf-endpoint
 * samples/fill-acro-form-pdf-endpoint
 * samples/creating-a-page-template-designer
+* samples/creating-pdf-dlex-layout-endpoint
+* samples/image-info
+* samples/blog-dynamic-columns
 
-The local files are in the resources folder and when run are copied to c:/temp/dynamicpdf-cloud-api-samples folder (or the folder you specify).
+The local files are in the resources folder.
 
 ## Tutorials
 

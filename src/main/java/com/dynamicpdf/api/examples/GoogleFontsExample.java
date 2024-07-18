@@ -28,8 +28,8 @@ public class GoogleFontsExample {
         pageNumberingElement.setFontSize(42);
         pageInput.getElements().add(pageNumberingElement);
  
-        String formattedInstructions = PrettyPrintUtility.prettyPrintJSON(pdf.getInstructionsJson());
-        System.out.println("instructions: " + formattedInstructions);
+        //String formattedInstructions = PrettyPrintUtility.prettyPrintJSON(pdf.getInstructionsJson());
+        //System.out.println("instructions: " + formattedInstructions);
         
         PdfResponse pdfResponse = pdf.process();
         

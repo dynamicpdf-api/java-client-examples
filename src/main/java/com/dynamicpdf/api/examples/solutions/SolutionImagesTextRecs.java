@@ -68,7 +68,7 @@ public class SolutionImagesTextRecs {
 		pageInput.getElements().add(imageElement);
 		
 		
-		System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.getInstructionsJson()));
+		//System.out.println(PrettyPrintUtility.prettyPrintJSON(pdf.getInstructionsJson()));
 		
 		PdfResponse response = pdf.process();
 		
