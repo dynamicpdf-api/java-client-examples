@@ -4,9 +4,9 @@
 
 # java-client-examples
 
-The Java Client Examples (`java-client-examples`) project uses the DynamicPDF Cloud API Java client library to create, merge, split, form fill, stamp, obtain metadata, convert, and secure/encrypt PDF documents.  This project contains numerous sample projects for the tutorials and examples at the [DynamicPDF Cloud API](https://cloud.dynamicpdf.com/) website.
+The Java Client Examples (`java-client-examples`) project uses the DynamicPDF API Java client library to create, merge, split, form fill, stamp, obtain metadata, convert, and secure/encrypt PDF documents.  This project contains numerous sample projects for the tutorials and examples at the [DynamicPDF API](https://cloud.dynamicpdf.com/) website.
 
-The DynamicPDF Cloud API consists of the following endpoints.
+The DynamicPDF API consists of the following endpoints.
 
 * `dlex-layout`
 * `image-info`
@@ -15,7 +15,7 @@ The DynamicPDF Cloud API consists of the following endpoints.
 * `pdf-text`
 * `pdf-xmp`
 
-For more information, please visit [DynamicPDF Cloud API](https://cloud.dynamicpdf.com/ "DynamicPDF Cloud API Homepage"). Support for other languages/platforms (PHP, C#, Node.js) is available on GitHub ([DynamicPDF Cloud API at GitHub](https://github.com/dynamicpdf-api "DynamicPDF Cloud API at GitHub")).
+For more information, please visit [DynamicPDF API](https://cloud.dynamicpdf.com/ "DynamicPDF Cloud API Homepage"). Support for other languages/platforms (PHP, C#, Node.js) is available on GitHub ([DynamicPDF Cloud API at GitHub](https://github.com/dynamicpdf-api "DynamicPDF Cloud API at GitHub")).
 
 ### **`java-client` Client Library**
 
@@ -92,13 +92,11 @@ The examples project contains a sample Maven POM file for building the project.
 * When first running any of the examples, be certain to first build the project using Maven so that your IDE pulls in all necessary dependencies. You can then run the examples for each tutorial independently from the command line.
 
 ## Running
-Each example is designed to be run standalone.  However, you can run all the examples at once by Running the `DynamicPdfCloudApiExamples` class in `DynamicPDFCloudApiExamples.java` file.
+Each example is designed to be run standalone.  However, you can run all the examples at once by running the `DynamicPdfCloudApiExamples` class in `DynamicPDFCloudApiExamples.java` file.
 
 ## Resources
 
-To obtain the resources for the project, login to [cloud.dynamicpdf.com](cloud.dynamicpdf.com) (assuming you have an account), and go to the **Resource Manager**. Use the `samples` folder to add the resources for the tutorial or example.  Resources for Users Guide sample code is available in the `users-guide-resources` project.
-
-- [Resource Manager Samples](https://cloud.dynamicpdf.com/docs/usersguide/environment-manager/environment-manager-sample-resources)
+To obtain the resources for the project, login to [dpdf.io](https://dpdf.io/) (assuming you have an account), and go to the **File Manager**. Use the `samples` folder to add the resources for the tutorial or example. Local resources are in the `resources` folder.
 
 You need the following samples folder in your Cloud Storage space to run all the examples.
 
