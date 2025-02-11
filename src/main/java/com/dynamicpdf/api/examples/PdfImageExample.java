@@ -16,16 +16,16 @@ public class PdfImageExample {
 
 	public static void main(String[] args) {
 
-		PdfImageExample.RunSinglePage(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/pdf-image/",
-				DynamicPdfCloudApiExamples.OUTPUT_PATH);
-		PdfImageExample.RunMultiPage(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/pdf-image/",
-				DynamicPdfCloudApiExamples.OUTPUT_PATH);
+		PdfImageExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/pdf-image/onepage.pdf",
+				DynamicPdfCloudApiExamples.OUTPUT_PATH + "/single-image-out_");
+		PdfImageExample.Run(DynamicPdfCloudApiExamples.API_KEY, DynamicPdfCloudApiExamples.BASE_DIR + "/pdf-image/pdfnumberedinput.pdf",
+				DynamicPdfCloudApiExamples.OUTPUT_PATH + "/multiple-image-out_");
 	}
 
-	public static void RunSinglePage(String key, String basePath, String outputPath) {
+	public static void Run(String key, String basePath, String outputPath) {
 
 	
-		PdfResource resource = new PdfResource(basePath + "onepage.pdf");
+		PdfResource resource = new PdfResource(basePath);
 		PdfImage pdfImage = new PdfImage(resource);
 		pdfImage.setApiKey(key);
 
@@ -38,42 +38,7 @@ public class PdfImageExample {
 
 			for (int i = 0; i < response.getImages().size(); i++) {
 				Image img = response.getImages().get(i);
-				File file = new File(outputPath + "/image-out_" + i + ".png");
-				OutputStream os;
-				try {
-					os = new FileOutputStream(file);
-					os.write(Base64.getDecoder().decode(response.getImages().get(i).getData()));
-					os.close();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-
-			}
-		} else {
-			System.out.println("errorcode: " + response.getStatusCode());
-			System.out.println(response.getErrorMessage());
-			System.out.println(response.getErrorJson());
-		}
-	}
-	
-	public static void RunMultiPage(String key, String basePath, String outputPath) {
-
-		
-		PdfResource resource = new PdfResource(basePath + "pdfnumberedinput.pdf");
-		PdfImage pdfImage = new PdfImage(resource);
-
-		PngImageFormat pngImageFormat = new PngImageFormat();
-		pdfImage.setImageFormat(pngImageFormat);
-
-		pdfImage.setApiKey(key);
-		
-		PdfImageResponse response = pdfImage.process();
-
-		if (response.getIsSuccessful()) {
-
-			for (int i = 0; i < response.getImages().size(); i++) {
-				Image img = response.getImages().get(i);
-				File file = new File(outputPath + "/image-multi-out_" + i + ".png");
+				File file = new File(outputPath  + i + ".png");
 				OutputStream os;
 				try {
 					os = new FileOutputStream(file);
