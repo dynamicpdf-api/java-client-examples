@@ -4,7 +4,7 @@
 
 # java-client-examples
 
-The Java Client Examples (`java-client-examples`) project uses the DynamicPDF API Java client library to create, merge, split, form fill, stamp, obtain metadata, convert, and secure/encrypt PDF documents.  This project contains numerous sample projects for the tutorials and examples at the [DynamicPDF API](https://cloud.dynamicpdf.com/) website.
+The Java Client Examples (`java-client-examples`) project uses the DynamicPDF API Java client library to create, merge, split, form fill, stamp, obtain metadata, convert, and secure/encrypt PDF documents.  This project contains numerous sample projects for the tutorials and examples at the [DynamicPDF API](https://dpdf.io/) website.
 
 The DynamicPDF API consists of the following endpoints.
 
@@ -15,7 +15,7 @@ The DynamicPDF API consists of the following endpoints.
 * `pdf-text`
 * `pdf-xmp`
 
-For more information, please visit [DynamicPDF API](https://cloud.dynamicpdf.com/ "DynamicPDF Cloud API Homepage"). Support for other languages/platforms (PHP, C#, Node.js) is available on GitHub ([DynamicPDF Cloud API at GitHub](https://github.com/dynamicpdf-api "DynamicPDF Cloud API at GitHub")).
+For more information, please visit [DynamicPDF API](https://dpdf.io/ "DynamicPDF Cloud API Homepage"). Support for other languages/platforms (PHP, C#, Node.js) is available on GitHub ([DynamicPDF Cloud API at GitHub](https://github.com/dynamicpdf-api "DynamicPDF Cloud API at GitHub")).
 
 ### **`java-client` Client Library**
 
@@ -120,21 +120,21 @@ The following table lists the available tutorials.
 
 | Tutorial Title                                     | Project/File/Class      | Tutorial Location                                            |
 | -------------------------------------------------- | ----------------------- | ------------------------------------------------------------ |
-| Merging PDFs                                       | MergePdfs               | https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/merging-pdfs |
-| Completing an AcroForm                             | `CompletingAcroForm`    | https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/form-completion |
-| Creating a PDF Using a DLEX and the `pdf` Endpoint | `CreatingPdfDlex`       | https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/dlex-pdf-endpoint |
-| Adding Bookmarks to a PDF                          | `AddBookmarks`          | https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/bookmarks |
-| Creating a PDF Using the `dlex-layout` Endpoint    | `CreatingPdfDlexLayout` | https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/dlex-layout |
-| Extracting Image Metadata                          | `GetImageInfo`          | https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/image-info |
-| Extract PDF Metadata                               | `GetPdfInfo`            | https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-info |
-| Extracting PDF's Text                              | `ExtractingText`        | https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-text |
-| Extract XMP Metadata                               | `GetXmpMetaData`        | https://cloud.dynamicpdf.com/docs/tutorials/cloud-api/pdf-xmp |
+| Merging PDFs                                       | MergePdfs               | https://dpdf.io/docs/tutorials/cloud-api/merging-pdfs |
+| Completing an AcroForm                             | `CompletingAcroForm`    | https://dpdf.io/docs/tutorials/cloud-api/form-completion |
+| Creating a PDF Using a DLEX and the `pdf` Endpoint | `CreatingPdfDlex`       | https://dpdf.io/docs/tutorials/cloud-api/dlex-pdf-endpoint |
+| Adding Bookmarks to a PDF                          | `AddBookmarks`          | https://dpdf.io/docs/tutorials/cloud-api/bookmarks |
+| Creating a PDF Using the `dlex-layout` Endpoint    | `CreatingPdfDlexLayout` | https://dpdf.io/docs/tutorials/cloud-api/dlex-layout |
+| Extracting Image Metadata                          | `GetImageInfo`          | https://dpdf.io/docs/tutorials/cloud-api/image-info |
+| Extract PDF Metadata                               | `GetPdfInfo`            | https://dpdf.io/docs/tutorials/cloud-api/pdf-info |
+| Extracting PDF's Text                              | `ExtractingText`        | https://dpdf.io/docs/tutorials/cloud-api/pdf-text |
+| Extract XMP Metadata                               | `GetXmpMetaData`        | https://dpdf.io/docs/tutorials/cloud-api/pdf-xmp |
 
 # Support
 
 The primary source for the DynamicPDF Cloud API support is through [Stack Overflow](https://stackoverflow.com/questions/tagged/dynamicpdf-api). Please use the "[dynamicpdf-api](https://stackoverflow.com/questions/tagged/dynamicpdf-api)" tag to ask questions. Our support team actively monitors the tag and responds promptly to any questions.  Also, let us know you asked the question by following up with an email to [support@dynamicpdf.com](mailto:support@dynamicpdf.com). 
 
-## Pro Plan Subscribers[#](https://cloud.dynamicpdf.com/support#pro-plan-subscribers)
+## Pro Plan Subscribers[#](https://dpdf.io/support#pro-plan-subscribers)
 
 Ticket support is available to Pro Plan subscribers. But we still encourage you to help the community by posting on Stack Overflow when possible. You can also email [support@dynamicpdf.com](mailto:support@dynamicpdf.com) if you need to ask something specific to your use case that may not help the DynamicPDF Cloud API community.
 

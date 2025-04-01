@@ -50,7 +50,7 @@ public class MergeSolution {
 
 		
 		LayoutDataResource layoutData = new LayoutDataResource(
-				basePath + "/creating-pdf-dlex-layout-endpoint/creating-pdf-dlex-layout.json");
+				basePath + "/creating-pdf-dlex-layout/creating-pdf-dlex-layout.json");
 		pdf.addDlex("samples/creating-pdf-dlex-layout-endpoint/creating-pdf-dlex-layout.dlex", layoutData);
 
 
